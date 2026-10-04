@@ -1,0 +1,50 @@
+# Manual deployment to AWS. Uses GitHub OIDC to assume a deploy role: no AWS access keys are stored in GitHub.
+# One-time setup (outside this repo): an IAM OIDC provider for token.actions.githubusercontent.com and a role
+# trusted only for this repository's "staging"/"production" environments, whose permissions are limited to
+# assuming the CDK bootstrap roles (cdk-*-deploy/file-publishing/image-publishing/lookup) plus S3 sync and
+# CloudFront invalidation for the REACT site bucket. Set repository variables AWS_DEPLOY_ROLE_ARN and AWS_REGION.
+name: deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        type: choice
+        options: [staging, production]
+        default: staging
+      llm_provider:
+        description: deterministic or bedrock (bedrock also needs the BEDROCK_MODEL_ID environment variable)
+        type: choice
+        options: [deterministic, bedrock]
+        default: deterministic
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: deploy-${{ inputs.environment }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - uses: aws-actions/configure-aws-credentials@v5
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - name: Deploy (CDK + UI + smoke test)
+        env:
+          ENV_NAME: ${{ inputs.environment }}
+          LLM_PROVIDER: ${{ inputs.llm_provider }}
+          BEDROCK_MODEL_ID: ${{ vars.BEDROCK_MODEL_ID }}
+          ALARM_EMAIL: ${{ vars.ALARM_EMAIL }}
+        run: scripts/deploy_aws.sh

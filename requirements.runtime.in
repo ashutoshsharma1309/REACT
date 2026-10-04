@@ -1,0 +1,11 @@
+# Runtime dependencies of the API container (no test tools). Compiled to requirements.lock with hashes:
+#   uv pip compile requirements.runtime.in -o requirements.lock --generate-hashes --python-version 3.12 --python-platform x86_64-unknown-linux-gnu
+fastapi>=0.115
+uvicorn[standard]>=0.30
+sqlalchemy>=2.0
+psycopg[binary]>=3.2
+pydantic>=2.8
+pydantic-settings>=2.4
+alembic>=1.13
+python-dotenv>=1.0
+boto3>=1.34

@@ -1,0 +1,1022 @@
+{
+ "agent_run_id": "902e03e3-4944-412c-91c6-c984a28c7d5b",
+ "subject_type": "RISK",
+ "incident_id": null,
+ "opportunity_id": null,
+ "risk_id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+ "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+ "status": "COMPLETED",
+ "result_status": "CONCLUDED",
+ "provider": "deterministic",
+ "model": "rule-based",
+ "llm_used": false,
+ "fallback_used": false,
+ "started_at": "2026-10-03T06:27:31.754728",
+ "completed_at": "2026-10-03T06:27:32.164357",
+ "iterations": 2,
+ "tool_calls_count": 4,
+ "llm_calls_count": 1,
+ "input_tokens": 0,
+ "output_tokens": 0,
+ "error": null,
+ "created_at": "2026-10-03T06:27:31.734187",
+ "limits": {
+  "max_retries": 1,
+  "max_llm_calls": 10,
+  "max_iterations": 4,
+  "max_tool_calls": 12,
+  "max_execution_seconds": 120.0
+ },
+ "detection_analysis": {
+  "summary": "STOCKOUT_RISK (CRITICAL) on Wireless Speaker X, SoundWave Wholesale, Astra Retail, Jayanagar, Wireless audio: Wireless Speaker X may run out within a day",
+  "priority": "P1",
+  "severity": "CRITICAL",
+  "event_type": "STOCKOUT_RISK",
+  "subject_id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+  "subject_kind": "risk",
+  "affected_entities": [
+   {
+    "name": "Wireless Speaker X",
+    "entity_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "entity_type": "product"
+   },
+   {
+    "name": "SoundWave Wholesale",
+    "entity_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b",
+    "entity_type": "supplier"
+   },
+   {
+    "name": "Astra Retail, Jayanagar",
+    "entity_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "entity_type": "inventory"
+   },
+   {
+    "name": "Wireless audio",
+    "entity_id": null,
+    "entity_type": "category"
+   }
+  ],
+  "evidence_categories": [
+   "order_items",
+   "inventory_snapshots",
+   "purchase_orders",
+   "supplier_deliveries",
+   "pricing_history",
+   "discounts"
+  ],
+  "missing_information": [],
+  "investigation_objective": "Find out why 'Wireless Speaker X may run out within a day' is happening for this merchant, which records support or contradict each explanation, and what it could cost in INR."
+ },
+ "investigation_analysis": {
+  "summary": "The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98). Tools consulted: get_product_sales, get_inventory_status, get_supplier_history, get_purchase_orders.",
+  "hypotheses": [
+   {
+    "assessment": "plausible",
+    "hypothesis_id": "ca65903e-827d-49a8-99dd-c17b3df672c9",
+    "hypothesis_type": "SUPPLIER_DELAY_SHORTAGE",
+    "rationale_summary": "5 supporting and 0 contradicting evidence items; Evidence Support Score 1.00 (strongly supported).",
+    "evidence_support_score": 1.0,
+    "supporting_evidence_ids": [
+     "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+     "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+     "22376687-09c2-489e-9633-456f57d4532b",
+     "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+     "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+    ],
+    "contradicting_evidence_ids": []
+   },
+   {
+    "assessment": "plausible",
+    "hypothesis_id": "97baaa2e-c016-4eaf-b5c7-ae941424b472",
+    "hypothesis_type": "DEMAND_SURGE",
+    "rationale_summary": "5 supporting and 1 contradicting evidence items; Evidence Support Score 0.98 (strongly supported).",
+    "evidence_support_score": 0.9821,
+    "supporting_evidence_ids": [
+     "71300339-886c-422a-9b27-189ed8e9bf6a",
+     "f4e8cdc4-74ef-4f9d-8c02-c69effacc69a",
+     "1fa780db-59db-489a-90d2-5901ce3f640f",
+     "1f4c12da-653e-4b8e-b7cf-1a46fecbfd64",
+     "04b07c83-6277-4e51-b053-365f6dd25f6f"
+    ],
+    "contradicting_evidence_ids": [
+     "1e8af98a-ab37-4508-8096-dcaa20a985bf"
+    ]
+   },
+   {
+    "assessment": "unlikely",
+    "hypothesis_id": "f591917f-3061-4dbf-ab6c-a595c9c8549d",
+    "hypothesis_type": "REORDER_POLICY_GAP",
+    "rationale_summary": "1 supporting and 4 contradicting evidence items; Evidence Support Score 0.38 (insufficient support).",
+    "evidence_support_score": 0.3848,
+    "supporting_evidence_ids": [
+     "4abdbbf1-6d6a-490a-9f7f-0c9071656092"
+    ],
+    "contradicting_evidence_ids": [
+     "92257a99-9431-4bbe-8736-4c0604d0d1e1",
+     "3f37d9fd-8aa1-42b5-b770-5d792249cc1d",
+     "4e3fd400-fada-4969-9a91-d258d2a3d2d6",
+     "6cde2e41-b795-43c0-b443-960dc146f4db"
+    ]
+   },
+   {
+    "assessment": "unlikely",
+    "hypothesis_id": "02fd5038-1fd3-42bd-bf50-29c0b4f0ba25",
+    "hypothesis_type": "PROMOTION_DRIVEN_DEMAND",
+    "rationale_summary": "1 supporting and 4 contradicting evidence items; Evidence Support Score 0.08 (insufficient support).",
+    "evidence_support_score": 0.0834,
+    "supporting_evidence_ids": [
+     "a4d26ac6-718e-4c40-ac26-00032ec483a6"
+    ],
+    "contradicting_evidence_ids": [
+     "afa25526-4ae4-46f2-b828-55775010efcd",
+     "0893ebe7-1e94-437d-880d-50b58a2b7986",
+     "fa6e3b89-bb9c-4abe-b3d7-95bfcc91678a",
+     "b793d13b-ec8d-4a09-8611-30f8f7c513c7"
+    ]
+   },
+   {
+    "assessment": "unlikely",
+    "hypothesis_id": "c3265fc9-f17c-451f-9bcd-bf641bfbe236",
+    "hypothesis_type": "BULK_ORDER_DEPLETION",
+    "rationale_summary": "0 supporting and 4 contradicting evidence items; Evidence Support Score 0.00 (insufficient support).",
+    "evidence_support_score": 0.0,
+    "supporting_evidence_ids": [],
+    "contradicting_evidence_ids": [
+     "d9b6857f-437a-42ef-84ce-7d97351e7452",
+     "905bbb3b-756e-4e4b-8cbe-b2cb8b232dd6",
+     "61d2d67c-782b-4d82-86cf-552d5dedbc23",
+     "c5e26ba2-b06f-4afd-b55d-46eefa9f5936"
+    ]
+   }
+  ],
+  "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+  "insufficient_evidence": false,
+  "leading_hypothesis_id": "ca65903e-827d-49a8-99dd-c17b3df672c9",
+  "leading_hypothesis_type": "SUPPLIER_DELAY_SHORTAGE",
+  "additional_evidence_needed": []
+ },
+ "evidence_assessment": {
+  "summary": "5 supporting evidence item(s) verified against stored records for SUPPLIER_DELAY_SHORTAGE; Evidence Support Score 1.00. Evidence is sufficient for a conclusion.",
+  "verified": true,
+  "conflicts": [],
+  "sufficient": true,
+  "hypothesis_id": "ca65903e-827d-49a8-99dd-c17b3df672c9",
+  "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+  "missing_evidence": [],
+  "unsupported_claims": [],
+  "evidence_support_score": 1.0,
+  "supporting_evidence_ids": [
+   "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+   "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+   "22376687-09c2-489e-9633-456f57d4532b",
+   "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+   "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+  ],
+  "contradicting_evidence_ids": []
+ },
+ "result": {
+  "status": "CONCLUDED",
+  "llm_used": false,
+  "provider": "deterministic",
+  "conflicts": [],
+  "conclusion": "The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98).",
+  "subject_id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+  "terminology": "evidence_support_score is the deterministic Evidence Support Score (strength of support in the records). It is not a probability.",
+  "agent_run_id": "902e03e3-4944-412c-91c6-c984a28c7d5b",
+  "subject_kind": "risk",
+  "fallback_used": false,
+  "hypothesis_id": "ca65903e-827d-49a8-99dd-c17b3df672c9",
+  "hypothesis_type": "SUPPLIER_DELAY_SHORTAGE",
+  "impact_reference": {
+   "basis": "SYNTHETIC",
+   "source": "app/impact/engine.py via investigation.impact",
+   "currency": "INR",
+   "components": {
+    "lost_sales": 38819.21,
+    "reorder_cost": 169106.0
+   },
+   "is_estimate": true,
+   "estimated_total": 38819.21,
+   "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf"
+  },
+  "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+  "missing_evidence": [],
+  "recommended_next_step": "Chase the overdue order and, if it cannot arrive in time, buy a bridging quantity from another source.",
+  "evidence_support_score": 1.0,
+  "supporting_evidence_ids": [
+   "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+   "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+   "22376687-09c2-489e-9633-456f57d4532b",
+   "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+   "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+  ],
+  "contradicting_evidence_ids": []
+ },
+ "trace": [
+  {
+   "trace_id": "e81acd29-3a52-49ca-99dc-5e58b774031f",
+   "sequence": 1,
+   "timestamp": "2026-10-03T06:27:31.739896",
+   "agent_name": "orchestrator",
+   "event_type": "state_transition",
+   "state": "CREATED",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "Agent run created for risk 390c6a8d-cdf7-403e-9a88-87b5e93e8bdc (provider deterministic)",
+   "details": {
+    "subject_id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+   },
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "45a37b4c-22aa-4910-8090-6a448ed24d70",
+   "sequence": 2,
+   "timestamp": "2026-10-03T06:27:31.754848",
+   "agent_name": "orchestrator",
+   "event_type": "state_transition",
+   "state": "CLASSIFYING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "CREATED -> CLASSIFYING",
+   "details": {},
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "10870cb4-a35e-4573-9f1c-af703223dddb",
+   "sequence": 3,
+   "timestamp": "2026-10-03T06:27:31.761100",
+   "agent_name": "detection_agent",
+   "event_type": "llm_call",
+   "state": "CLASSIFYING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "detection_analysis: valid DetectionAnalysis from deterministic",
+   "details": {
+    "model": "rule-based",
+    "attempt": 1,
+    "provider": "deterministic",
+    "input_tokens": 0,
+    "output_tokens": 0
+   },
+   "duration_ms": 0.6,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "7c5a810f-6e96-4dcc-9208-e2ee7eebcaef",
+   "sequence": 4,
+   "timestamp": "2026-10-03T06:27:31.763298",
+   "agent_name": "detection_agent",
+   "event_type": "result",
+   "state": "CLASSIFYING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "Classified STOCKOUT_RISK (CRITICAL, P1); objective: Find out why 'Wireless Speaker X may run out within a day' is happening for this merchant, which records support or cont",
+   "details": {
+    "affected_entities": [
+     {
+      "name": "Wireless Speaker X",
+      "entity_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+      "entity_type": "product"
+     },
+     {
+      "name": "SoundWave Wholesale",
+      "entity_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b",
+      "entity_type": "supplier"
+     },
+     {
+      "name": "Astra Retail, Jayanagar",
+      "entity_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+      "entity_type": "inventory"
+     },
+     {
+      "name": "Wireless audio",
+      "entity_id": null,
+      "entity_type": "category"
+     }
+    ],
+    "evidence_categories": [
+     "order_items",
+     "inventory_snapshots",
+     "purchase_orders",
+     "supplier_deliveries",
+     "pricing_history",
+     "discounts"
+    ],
+    "missing_information": []
+   },
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "1ee2b99b-0755-49a4-b904-69a599d37489",
+   "sequence": 5,
+   "timestamp": "2026-10-03T06:27:31.765951",
+   "agent_name": "orchestrator",
+   "event_type": "state_transition",
+   "state": "INVESTIGATING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "CLASSIFYING -> INVESTIGATING",
+   "details": {},
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "64695977-0d77-45d4-8aa3-0f673923d173",
+   "sequence": 6,
+   "timestamp": "2026-10-03T06:27:31.772466",
+   "agent_name": "investigation_agent",
+   "event_type": "llm_call",
+   "state": "INVESTIGATING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "tool_selection: 4 tool call(s) requested (get_product_sales, get_inventory_status, get_supplier_history, get_purchase_orders)",
+   "details": {
+    "model": "rule-based",
+    "attempt": 1,
+    "provider": "deterministic"
+   },
+   "duration_ms": 0.1,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "d710f3a6-3acb-4104-9a78-630ebdab5733",
+   "sequence": 7,
+   "timestamp": "2026-10-03T06:27:31.804184",
+   "agent_name": "investigation_agent",
+   "event_type": "tool_call",
+   "state": "INVESTIGATING",
+   "tool_name": "get_product_sales",
+   "tool_arguments": {
+    "days": 14,
+    "product_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e"
+   },
+   "tool_call_id": "c9fc4b58-921c-431d-be34-42b3c7afd3cf",
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "get_product_sales -> OK (57 records)",
+   "details": {
+    "purpose": "recent vs normal sales, price, cost and customers"
+   },
+   "duration_ms": 26.6,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "0726594d-e19f-46c5-bf24-5691a3be6cc5",
+   "sequence": 8,
+   "timestamp": "2026-10-03T06:27:31.818197",
+   "agent_name": "investigation_agent",
+   "event_type": "tool_call",
+   "state": "INVESTIGATING",
+   "tool_name": "get_inventory_status",
+   "tool_arguments": {
+    "product_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "inventory_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0"
+   },
+   "tool_call_id": "4de3fc75-16e7-42e0-8f7b-40db680db960",
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "get_inventory_status -> OK (1 records)",
+   "details": {
+    "purpose": "stock, open orders, stockouts and stock age"
+   },
+   "duration_ms": 10.9,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "2d58f4cb-ebef-4c5a-ae27-60bbfb09c9ec",
+   "sequence": 9,
+   "timestamp": "2026-10-03T06:27:31.831685",
+   "agent_name": "investigation_agent",
+   "event_type": "tool_call",
+   "state": "INVESTIGATING",
+   "tool_name": "get_supplier_history",
+   "tool_arguments": {
+    "supplier_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b"
+   },
+   "tool_call_id": "f114fba0-82e6-4798-8c8d-648dc9a5cc1b",
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "get_supplier_history -> OK (21 records)",
+   "details": {
+    "purpose": "delivery record and lead time"
+   },
+   "duration_ms": 7.8,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "7c7ca2da-0a5a-4ee7-83b0-e701ff5d3dea",
+   "sequence": 10,
+   "timestamp": "2026-10-03T06:27:31.845120",
+   "agent_name": "investigation_agent",
+   "event_type": "tool_call",
+   "state": "INVESTIGATING",
+   "tool_name": "get_purchase_orders",
+   "tool_arguments": {
+    "status": "OPEN",
+    "product_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e"
+   },
+   "tool_call_id": "3fe2a286-60cb-4edf-bce4-55637740a254",
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "get_purchase_orders -> OK (1 records)",
+   "details": {
+    "purpose": "orders on the way"
+   },
+   "duration_ms": 10.8,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "acd84853-ae7c-4431-ac1e-73526a2e8eae",
+   "sequence": 11,
+   "timestamp": "2026-10-03T06:27:31.847157",
+   "agent_name": "investigation_agent",
+   "event_type": "llm_call",
+   "state": "INVESTIGATING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "tool_selection: 0 tool call(s) requested",
+   "details": {
+    "model": "rule-based",
+    "attempt": 1,
+    "provider": "deterministic"
+   },
+   "duration_ms": 0.1,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "480f7e22-d53c-4266-95bb-ba31828b85ac",
+   "sequence": 12,
+   "timestamp": "2026-10-03T06:27:32.140330",
+   "agent_name": "investigation_agent",
+   "event_type": "investigation_engine",
+   "state": "INVESTIGATING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [
+    "ca65903e-827d-49a8-99dd-c17b3df672c9",
+    "97baaa2e-c016-4eaf-b5c7-ae941424b472",
+    "f591917f-3061-4dbf-ab6c-a595c9c8549d",
+    "02fd5038-1fd3-42bd-bf50-29c0b4f0ba25",
+    "c3265fc9-f17c-451f-9bcd-bf641bfbe236"
+   ],
+   "summary": "Deterministic investigation 854c4c57-b0cc-4863-a8fe-abefb21908bf completed: 5 hypotheses, conclusion 'SUPPLIER_DELAY_SHORTAGE' (ESS 1.0)",
+   "details": {
+    "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf"
+   },
+   "duration_ms": 291.9,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "b5f0e936-a4a1-4d37-a8c0-3928aa4441fb",
+   "sequence": 13,
+   "timestamp": "2026-10-03T06:27:32.147226",
+   "agent_name": "investigation_agent",
+   "event_type": "llm_call",
+   "state": "INVESTIGATING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "investigation_analysis: valid InvestigationAnalysis from deterministic",
+   "details": {
+    "model": "rule-based",
+    "attempt": 1,
+    "provider": "deterministic",
+    "input_tokens": 0,
+    "output_tokens": 0
+   },
+   "duration_ms": 0.5,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "1963ec82-ed8e-49d3-8eb5-2d023e0188b5",
+   "sequence": 14,
+   "timestamp": "2026-10-03T06:27:32.149040",
+   "agent_name": "investigation_agent",
+   "event_type": "result",
+   "state": "INVESTIGATING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [
+    "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+    "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+    "22376687-09c2-489e-9633-456f57d4532b",
+    "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+    "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+   ],
+   "hypothesis_ids": [
+    "ca65903e-827d-49a8-99dd-c17b3df672c9",
+    "97baaa2e-c016-4eaf-b5c7-ae941424b472",
+    "f591917f-3061-4dbf-ab6c-a595c9c8549d",
+    "02fd5038-1fd3-42bd-bf50-29c0b4f0ba25",
+    "c3265fc9-f17c-451f-9bcd-bf641bfbe236"
+   ],
+   "summary": "Assessment: leading SUPPLIER_DELAY_SHORTAGE (plausible); insufficient_evidence=False",
+   "details": {
+    "summary_text": "The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98). Tools consulted: get_product_sales, get_inventory_status, get_supplier_history, get_pu"
+   },
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "afe259d1-df31-4298-a9bf-82ede21c4792",
+   "sequence": 15,
+   "timestamp": "2026-10-03T06:27:32.152222",
+   "agent_name": "orchestrator",
+   "event_type": "state_transition",
+   "state": "VERIFYING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "INVESTIGATING -> VERIFYING",
+   "details": {},
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "26b90ebe-cd69-4345-b176-807a0ce043b7",
+   "sequence": 16,
+   "timestamp": "2026-10-03T06:27:32.157819",
+   "agent_name": "evidence_agent",
+   "event_type": "llm_call",
+   "state": "VERIFYING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "evidence_assessment: valid EvidenceAssessment from deterministic",
+   "details": {
+    "model": "rule-based",
+    "attempt": 1,
+    "provider": "deterministic",
+    "input_tokens": 0,
+    "output_tokens": 0
+   },
+   "duration_ms": 0.3,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "38c44bcd-714f-45ea-bb71-a6bf80d6f354",
+   "sequence": 17,
+   "timestamp": "2026-10-03T06:27:32.159857",
+   "agent_name": "evidence_agent",
+   "event_type": "result",
+   "state": "VERIFYING",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [
+    "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+    "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+    "22376687-09c2-489e-9633-456f57d4532b",
+    "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+    "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+   ],
+   "hypothesis_ids": [
+    "ca65903e-827d-49a8-99dd-c17b3df672c9"
+   ],
+   "summary": "Verification: verified=True sufficient=True; 5 supporting / 0 contradicting; 0 conflict(s); 0 missing",
+   "details": {
+    "missing": [],
+    "conflicts": [],
+    "unsupported_claims": []
+   },
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "517fb6b8-8e2d-40c5-b229-ae46e2521b77",
+   "sequence": 18,
+   "timestamp": "2026-10-03T06:27:32.160975",
+   "agent_name": "orchestrator",
+   "event_type": "state_transition",
+   "state": "COMPLETED",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "VERIFYING -> COMPLETED",
+   "details": {},
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "9e1c6591-7c1c-4b1a-b957-229f721e1719",
+   "sequence": 19,
+   "timestamp": "2026-10-03T06:27:32.164415",
+   "agent_name": "orchestrator",
+   "event_type": "result",
+   "state": "COMPLETED",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [
+    "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+    "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+    "22376687-09c2-489e-9633-456f57d4532b",
+    "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+    "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+   ],
+   "hypothesis_ids": [
+    "ca65903e-827d-49a8-99dd-c17b3df672c9"
+   ],
+   "summary": "CONCLUDED: The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing f",
+   "details": {
+    "limits": {
+     "max_retries": 1,
+     "max_llm_calls": 10,
+     "max_iterations": 4,
+     "max_tool_calls": 12,
+     "max_execution_seconds": 120.0
+    },
+    "llm_calls": 5,
+    "iterations": 2,
+    "tool_calls": 4,
+    "elapsed_seconds": 0.41
+   },
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "f18b2247-757b-48b0-b47e-f285fdb06650",
+   "sequence": 20,
+   "timestamp": "2026-10-03T06:27:32.189769",
+   "agent_name": "decision_agent",
+   "event_type": "llm_call",
+   "state": "COMPLETED",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "decision_recommendation: valid DecisionRecommendation from deterministic",
+   "details": {
+    "model": "rule-based",
+    "attempt": 1,
+    "provider": "deterministic",
+    "input_tokens": 0,
+    "output_tokens": 0
+   },
+   "duration_ms": 0.4,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "f3ea6c4e-5dbc-4454-bd22-17742833f09a",
+   "sequence": 21,
+   "timestamp": "2026-10-03T06:27:32.191411",
+   "agent_name": "decision_agent",
+   "event_type": "result",
+   "state": "COMPLETED",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [
+    "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+    "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+    "22376687-09c2-489e-9633-456f57d4532b",
+    "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+    "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+   ],
+   "hypothesis_ids": [
+    "ca65903e-827d-49a8-99dd-c17b3df672c9"
+   ],
+   "summary": "Recommendation: REORDER_PRODUCT (READY, P1) for product ef0c34b1-2d36-4027-9c4e-6db12200253e: Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+   "details": {
+    "readiness": "READY",
+    "action_type": "REORDER_PRODUCT",
+    "alternatives": [
+     "MONITOR_PRODUCT",
+     "REVIEW_DEMAND"
+    ]
+   },
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "11e34c2c-c7d5-4689-9b5a-7468db9d35cb",
+   "sequence": 22,
+   "timestamp": "2026-10-03T06:27:32.196216",
+   "agent_name": "decision_agent",
+   "event_type": "decision",
+   "state": "DECISION_READY",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [
+    "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+    "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+    "22376687-09c2-489e-9633-456f57d4532b",
+    "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+    "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+   ],
+   "hypothesis_ids": [
+    "ca65903e-827d-49a8-99dd-c17b3df672c9"
+   ],
+   "summary": "Decision 02515578-1f25-4fb8-9fb8-438c7ce281d9 created: READY, REORDER_PRODUCT for Wireless Speaker X",
+   "details": {
+    "decision_id": "02515578-1f25-4fb8-9fb8-438c7ce281d9"
+   },
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  },
+  {
+   "trace_id": "e104d8f2-0c0d-41d0-bc34-9ff34175aecf",
+   "sequence": 23,
+   "timestamp": "2026-10-03T06:27:32.293890",
+   "agent_name": "decision_engine",
+   "event_type": "approval_requested",
+   "state": "AWAITING_APPROVAL",
+   "tool_name": null,
+   "tool_arguments": null,
+   "tool_call_id": null,
+   "evidence_ids": [],
+   "hypothesis_ids": [],
+   "summary": "Human approval requested for REORDER_PRODUCT (approval 7ed28bbd-2d7f-4ec6-a3e0-1a2b78a8bfd1); action 9a0060a5-86dd-4d81-9254-0470bc6fe829 PROPOSED",
+   "details": {
+    "decision_id": "02515578-1f25-4fb8-9fb8-438c7ce281d9"
+   },
+   "duration_ms": null,
+   "status": "ok",
+   "error": null
+  }
+ ],
+ "tool_calls": [
+  {
+   "tool_call_id": "c9fc4b58-921c-431d-be34-42b3c7afd3cf",
+   "sequence": 1,
+   "agent_name": "investigation_agent",
+   "tool_name": "get_product_sales",
+   "arguments": {
+    "days": 14,
+    "product_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e"
+   },
+   "purpose": "recent vs normal sales, price, cost and customers",
+   "status": "OK",
+   "permitted": true,
+   "duration_ms": 26.6,
+   "result_summary": {
+    "keys": [
+     "count",
+     "demand_change_pct",
+     "normal",
+     "order_item_ids",
+     "order_item_ids_normal",
+     "product",
+     "recent"
+    ],
+    "count": 57,
+    "record_ids": {
+     "id": [
+      "ef0c34b1-2d36-4027-9c4e-6db12200253e"
+     ],
+     "order_item_ids": [
+      "1ee2dd93-d7f1-489e-ab20-4285563d67a3",
+      "2a107c34-60f3-4ce9-bfa9-11625710a4ad",
+      "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+      "3febc296-c157-4f43-a985-a5d000de12c1",
+      "4119bc2a-a945-4270-997c-7a582e4ec8f4",
+      "53d41c18-a031-45c1-90da-6cd5f43a842d",
+      "547f9baf-0397-40f7-bcd6-c0dd643ed690",
+      "565d9e9b-b7ea-44b6-a6b3-505eeee51668",
+      "59798c49-5d10-4ae0-a18b-51c0cd6d0c34",
+      "623aaae9-b0d0-4e17-8087-d65df17e9137",
+      "6f5151a7-ce6a-42e4-9952-f0ebf705d3a5",
+      "8b46d88b-5e8e-4601-83a1-8ad39b2659aa",
+      "926479cc-cac1-4c88-9d5c-35d0de5aca6b",
+      "97ba52c9-222e-431d-b609-c8770523b896",
+      "9937561a-b791-4faf-ba17-26f9dee4272d",
+      "9d80c33d-8357-44fa-8057-92a35239fbb0",
+      "b0ed9471-da7d-469a-a51d-e9dc1776d371",
+      "b9be4f5e-984b-41bc-a773-505636a864fa",
+      "c33d9b49-2f06-4841-b9af-c0566049e308",
+      "c3f82e19-3876-49fb-a805-0f1665c75fc8",
+      "c4980690-945c-4ecb-a8fe-e90fad05572d",
+      "ca2e0daa-9a3c-4bd7-b9fe-eea9e7b5fd90",
+      "d9e4aad0-26eb-440b-b645-87ecbe6ce131",
+      "ea8928a4-353a-423d-9a90-8c5d7db74669",
+      "fe6bf67d-6b7f-48ea-953f-d449c448f890"
+     ]
+    }
+   },
+   "error": null,
+   "created_at": "2026-10-03T06:27:31.801653"
+  },
+  {
+   "tool_call_id": "4de3fc75-16e7-42e0-8f7b-40db680db960",
+   "sequence": 2,
+   "agent_name": "investigation_agent",
+   "tool_name": "get_inventory_status",
+   "arguments": {
+    "product_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "inventory_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0"
+   },
+   "purpose": "stock, open orders, stockouts and stock age",
+   "status": "OK",
+   "permitted": true,
+   "duration_ms": 10.9,
+   "result_summary": {
+    "keys": [
+     "count",
+     "items"
+    ],
+    "count": 1,
+    "record_ids": {
+     "supplier_id": [
+      "30a313bc-398d-4aa8-9dc6-b37baefc3a5b"
+     ],
+     "inventory_id": [
+      "95934bbc-38c9-4928-bb08-b9c5f30acdf0"
+     ]
+    }
+   },
+   "error": null,
+   "created_at": "2026-10-03T06:27:31.817618"
+  },
+  {
+   "tool_call_id": "f114fba0-82e6-4798-8c8d-648dc9a5cc1b",
+   "sequence": 3,
+   "agent_name": "investigation_agent",
+   "tool_name": "get_supplier_history",
+   "arguments": {
+    "supplier_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b"
+   },
+   "purpose": "delivery record and lead time",
+   "status": "OK",
+   "permitted": true,
+   "duration_ms": 7.8,
+   "result_summary": {
+    "keys": [
+     "count",
+     "deliveries",
+     "dependent_product_ids",
+     "dependent_products",
+     "last_6",
+     "normal",
+     "open_purchase_orders",
+     "ordered_units_per_day",
+     "recent",
+     "supplier",
+     "supplier_delivery_ids"
+    ],
+    "count": 21,
+    "record_ids": {
+     "id": [
+      "30a313bc-398d-4aa8-9dc6-b37baefc3a5b"
+     ],
+     "delivery_id": [
+      "0d5ea3d7-70f9-4e43-8de9-e1ac170845fe",
+      "24b5c1ba-8e09-45e5-b88c-27f616f8d697",
+      "46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+      "52474fe9-89f2-4ca0-88d9-80cac0191ee3",
+      "5ac3d7d1-7e16-4fe5-95d2-0a5612cf0811",
+      "62327cc2-f74c-4911-ba35-3f0cb80bc3c6",
+      "7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+      "79ed448d-9e1c-49bd-82fd-2a597da590be",
+      "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+      "7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+      "7dc6b5ed-cde2-4697-bf48-a9b2b4de3eb5",
+      "88f32072-b67d-4fe0-a297-b1aa03d91889",
+      "966cc22b-83e3-4953-86bf-9d55b42e7f7d",
+      "9ca3fbd3-8161-4443-bcf4-f4ec43d1a3c9",
+      "b98cd639-ab93-437a-8a4d-dfd6122e9eca",
+      "c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+      "db6b78f7-7b54-4b95-8c3c-cc60bfc18639",
+      "e535d825-4fe5-439f-9053-d553d9e67183",
+      "ead7c4ec-b609-44e3-b068-2f12a621fdf4",
+      "f6fd454d-8c6c-4e28-8d0b-70fb6bf0f6cf"
+     ],
+     "purchase_order_id": [
+      "0f0c2262-7922-48dc-8a3c-270ce728b2f0",
+      "17e856e7-244f-4894-aa69-3e46496ec55d",
+      "1f93627f-3d40-43c5-a4f6-5804bba23a00",
+      "2baceada-cb85-4a11-af7d-93892af9fd6f",
+      "3b7f0682-73c4-4c68-acdd-bd1973eb41f3",
+      "3fe5e466-9764-44f7-bdd8-bd26d2836f52",
+      "4dcd1767-d958-49c6-a0e1-cecb3fbb77b3",
+      "51a9f434-a692-4ebf-bce7-408bfff2a85b",
+      "59edd560-da6e-4b15-8ab1-ee1b4a5f59ae",
+      "6ea333dc-6bc2-4477-812d-c64fbe58a19a",
+      "7714cd52-dd73-4ab8-a112-099ea81671ef",
+      "877de30e-09ab-4cfd-9279-eab342dc86b9",
+      "a87aa0a6-74d4-44ba-b0c1-bff8e2dc2ace",
+      "a8b1ec09-8f38-46db-a2ee-6c708101d7b4",
+      "adfe557f-84fc-4d79-a864-4d7e6527866a",
+      "cb5cb156-2915-49f0-b6ca-881e2f980a13",
+      "d3c0a292-ca1d-479f-bf69-285e92c4e8fa",
+      "e748f6e6-93f2-4a80-87f2-24cbbf8a02bb",
+      "ebb94276-3e2b-47c1-a6a2-c4a6bc744e11",
+      "ed64a913-660b-4e5b-bc14-3638435b74e5",
+      "f3750d06-964e-4d38-82f3-fb10b403c054",
+      "f681b2f9-b16e-4851-97e4-2d5d676a6231",
+      "ffc1ae86-e612-495c-9b7f-cd41e1ef5479"
+     ],
+     "dependent_product_ids": [
+      "2d946f02-6117-4f50-814a-e26ca18a5283",
+      "a0291fa7-33bd-4a4e-a1d5-e41e71586cbd",
+      "e1854363-152f-4217-b7e6-55d1c49d121c",
+      "ef0c34b1-2d36-4027-9c4e-6db12200253e"
+     ],
+     "supplier_delivery_ids": [
+      "24b5c1ba-8e09-45e5-b88c-27f616f8d697",
+      "46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+      "52474fe9-89f2-4ca0-88d9-80cac0191ee3",
+      "62327cc2-f74c-4911-ba35-3f0cb80bc3c6",
+      "7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+      "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+      "7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+      "7dc6b5ed-cde2-4697-bf48-a9b2b4de3eb5",
+      "88f32072-b67d-4fe0-a297-b1aa03d91889",
+      "9ca3fbd3-8161-4443-bcf4-f4ec43d1a3c9",
+      "b98cd639-ab93-437a-8a4d-dfd6122e9eca",
+      "c269a98d-6d48-4507-bc7f-8d93c1e5c926"
+     ]
+    }
+   },
+   "error": null,
+   "created_at": "2026-10-03T06:27:31.829332"
+  },
+  {
+   "tool_call_id": "3fe2a286-60cb-4edf-bce4-55637740a254",
+   "sequence": 4,
+   "agent_name": "investigation_agent",
+   "tool_name": "get_purchase_orders",
+   "arguments": {
+    "status": "OPEN",
+    "product_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e"
+   },
+   "purpose": "orders on the way",
+   "status": "OK",
+   "permitted": true,
+   "duration_ms": 10.8,
+   "result_summary": {
+    "keys": [
+     "count",
+     "purchase_orders"
+    ],
+    "count": 1,
+    "record_ids": {
+     "purchase_order_id": [
+      "877de30e-09ab-4cfd-9279-eab342dc86b9"
+     ]
+    }
+   },
+   "error": null,
+   "created_at": "2026-10-03T06:27:31.844364"
+  }
+ ],
+ "terminology": "evidence_support_score values are the deterministic Evidence Support Score restated by the agents; they are not probabilities. Impact figures come from the deterministic impact engine."
+}

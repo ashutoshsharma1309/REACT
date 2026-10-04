@@ -1,0 +1,220 @@
+{
+ "company": {
+  "name": "Astra Retail",
+  "industry": "Retail",
+  "currency": "INR"
+ },
+ "as_of": "2026-10-02T07:00:00",
+ "data_source": "Synthetic dataset (fictional business)",
+ "scanned": true,
+ "business_status": "NEEDS_ATTENTION",
+ "headline": "2 open issues",
+ "counts": {
+  "critical": 0,
+  "high": 0,
+  "other": 2,
+  "addressed": 0,
+  "opportunities": 0,
+  "pending_decisions": 0
+ },
+ "attention": [
+  {
+   "kind": "risk",
+   "id": "4a426e7b-26b3-4961-8b02-2ec1d956126c",
+   "type": "SLOW_MOVING_INVENTORY",
+   "title": "Storix Portable SSD 1TB has barely sold in 30 days",
+   "description": "2 units (\u20b914,958) have been on the shelf for 75 days; 0 sold in the last 30 days.",
+   "status": "OPEN",
+   "detected_at": "2026-10-02T07:00:00",
+   "severity": "LOW",
+   "confidence": null,
+   "entity": {
+    "type": "product",
+    "id": "12a142c5-f6e1-4535-bae2-ddde40064cff",
+    "name": "Storix Portable SSD 1TB",
+    "code": "SSD-02"
+   },
+   "location": "Astra Retail, Jayanagar",
+   "impact": {
+    "value": 14958.0,
+    "currency": "INR",
+    "description": "2 surplus units at \u20b97,479 cost each",
+    "formula": "capital_locked = excess_units * unit_cost; holding_cost = excess_units * holding_cost_per_unit_month * months",
+    "basis": "SYNTHETIC"
+   },
+   "evidence_count": 4,
+   "stage": "DETECTED",
+   "investigation": null,
+   "agent_run": null,
+   "decision": null,
+   "signal": null,
+   "supporting_metrics": {
+    "stock_value": 14958.0,
+    "units_on_hand": 2,
+    "stock_age_days": 75,
+    "units_sold_30d": 0
+   }
+  },
+  {
+   "kind": "risk",
+   "id": "2624211c-8cc0-4008-a17e-63db3a17bd87",
+   "type": "STOCKOUT_RISK",
+   "title": "Zentra Fit Smartwatch Black may run out in 9 days",
+   "description": "8 units left and selling about 0.9 a day. The next stock from Wearix Distribution is about 10 days away (no open purchase order; next order day in 4 days plus 6 days lead time), so the shelf could be empty for 0.7 days.",
+   "status": "OPEN",
+   "detected_at": "2026-10-02T07:00:00",
+   "severity": "LOW",
+   "confidence": null,
+   "entity": {
+    "type": "product",
+    "id": "9c4e8c92-8356-432b-966c-a02ddefe9e8a",
+    "name": "Zentra Fit Smartwatch Black",
+    "code": "WF-01"
+   },
+   "location": "Astra Retail, Jayanagar",
+   "impact": {
+    "value": 1134.56,
+    "currency": "INR",
+    "description": "About 1 units of sales lost over 0.7 days without stock",
+    "formula": "lost_sales = units_per_day * days_without_stock * unit_price; lost_margin = lost_units * unit_margin",
+    "basis": "SYNTHETIC"
+   },
+   "evidence_count": 32,
+   "stage": "DETECTED",
+   "investigation": null,
+   "agent_run": null,
+   "decision": null,
+   "signal": null,
+   "supporting_metrics": {
+    "demand_basis": "last 14 days (in-stock days)",
+    "days_of_cover": 9.3,
+    "units_on_hand": 8,
+    "units_per_day": 0.86,
+    "units_on_order": 0,
+    "quoted_lead_days": 6,
+    "days_without_stock": 0.7,
+    "observed_lead_days": 6.0,
+    "open_purchase_orders": 0,
+    "days_until_next_stock": 10.0
+   }
+  }
+ ],
+ "addressed": [],
+ "opportunities": [],
+ "impact": {
+  "exposure_total": 16092.56,
+  "exposure_count": 2,
+  "opportunity_total": null,
+  "opportunity_count": 0,
+  "currency": "INR",
+  "note": "Sums of the deterministic impact estimates attached to each open finding. Estimates can overlap, so totals indicate scale rather than an exact figure."
+ },
+ "metrics": null,
+ "recent_activity": [
+  {
+   "at": "2026-10-03T06:27:28.348343",
+   "kind": "scan",
+   "title": "Business scan: opportunities",
+   "detail": "0 new opportunities",
+   "status": "COMPLETED",
+   "link": null
+  },
+  {
+   "at": "2026-10-03T06:27:28.137571",
+   "kind": "scan",
+   "title": "Business scan: risks",
+   "detail": "2 new risks found",
+   "status": "COMPLETED",
+   "link": null
+  },
+  {
+   "at": "2026-10-03T06:27:27.981146",
+   "kind": "simulation",
+   "title": "Scenario loaded: Business data reset to baseline",
+   "detail": "Business reset to its normal baseline.",
+   "status": "COMPLETED",
+   "link": null
+  }
+ ],
+ "domain": "merchant",
+ "business_health": {
+  "period": {
+   "label": "Last 7 days",
+   "start": "2026-09-25",
+   "end": "2026-10-01"
+  },
+  "revenue": 576996.0,
+  "gross_margin": 120789.0,
+  "gross_margin_rate": 0.2093,
+  "orders": 257,
+  "units": 369,
+  "average_order_value": 2245.12,
+  "discount_rate": 0.0044,
+  "previous": {
+   "revenue": 589449.0,
+   "gross_margin": 122523.0,
+   "gross_margin_rate": 0.2079,
+   "orders": 266,
+   "units": 376,
+   "average_order_value": 2215.97,
+   "discount_rate": 0.0038
+  },
+  "revenue_change_pct": -2.1,
+  "gross_margin_change_pct": -1.4,
+  "orders_change_pct": -3.4,
+  "revenue_vs_normal_week_pct": -9.9,
+  "normal_weekly_revenue": 640543.12,
+  "inventory": {
+   "healthy_pct": 98.8,
+   "products_considered": 162,
+   "healthy": 160,
+   "short_of_stock": 1,
+   "overstocked": 1,
+   "rule": "healthy = stock lasts until the next delivery and is not more than 90 days of sales; sporadic sellers excluded"
+  },
+  "currency": "INR",
+  "basis": "SYNTHETIC"
+ },
+ "value": {
+  "potential_loss_identified": 16092.56,
+  "opportunity_identified": 0,
+  "inventory_capital_at_risk": 14958.0,
+  "issues_detected": 2,
+  "issues_open": 2,
+  "issues_resolved": 0,
+  "stockout_risks_detected": 1,
+  "supplier_risks_detected": 0,
+  "opportunities_detected": 0,
+  "actions_recommended": 0,
+  "actions_approved": 0,
+  "actions_rejected": 0,
+  "simulated_actions_executed": 0,
+  "revenue_protected_estimate": 0,
+  "margin_protected_estimate": 0,
+  "opportunity_pursued_estimate": 0,
+  "currency": "INR",
+  "labels": {
+   "potential_loss_identified": "Estimated, synthetic",
+   "opportunity_identified": "Potential, synthetic",
+   "revenue_protected_estimate": "Estimated impact of approved simulated actions; not real savings"
+  }
+ },
+ "merchant": {
+  "business_name": "Astra Retail",
+  "business_type": "Consumer electronics & mobile accessories",
+  "city": "Bengaluru",
+  "state": "Karnataka",
+  "stores": [
+   {
+    "id": "d304d608-50db-4710-92c6-e2f2ce624ad2",
+    "code": "S1",
+    "name": "Astra Retail, Jayanagar",
+    "locality": "Jayanagar",
+    "region": "South Bengaluru",
+    "type": "PHYSICAL"
+   }
+  ],
+  "scenario": null,
+  "is_synthetic": true
+ }
+}

@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+*.egg-info/
+.DS_Store
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+
+# Phase 6
+var/
+.env.*
+!.env.example
+infra/node_modules/
+infra/cdk.out/
+infra/cdk.context.json
+*.pem
+infra/cdk-outputs.json

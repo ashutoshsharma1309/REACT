@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: react-postgres
+    environment:
+      POSTGRES_USER: react
+      POSTGRES_PASSWORD: react
+      POSTGRES_DB: react
+    ports:
+      - "5432:5432"
+    volumes:
+      - react_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U react -d react"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  backend:
+    build: .
+    container_name: react-backend
+    env_file:
+      - .env.example
+    environment:
+      DATABASE_URL: postgresql+psycopg://react:react@postgres:5432/react
+      TEST_DATABASE_URL: postgresql+psycopg://react:react@postgres:5432/react_test
+      SEED_ON_STARTUP: "true"
+      AUTO_CREATE_SCHEMA: "false"   # schema comes from "alembic upgrade head" (scripts/entrypoint.sh, RUN_MIGRATIONS=true)
+      RUN_MIGRATIONS: "true"
+      APP_ENV: local
+      STORAGE_BACKEND: local        # evidence packs go to the react_artifacts volume, not S3
+      LLM_PROVIDER: deterministic   # no AWS credentials needed locally
+    ports:
+      - "8000:8000"
+    volumes:
+      - react_artifacts:/app/var/artifacts
+    depends_on:
+      postgres:
+        condition: service_healthy
+    # The image HEALTHCHECK polls /health; compose reports it as the container health.
+
+  # Redis / ElastiCache is intentionally not part of REACT: nothing needs a cache or queue yet (see docs/aws-architecture.md).
+
+volumes:
+  react_pgdata:
+  react_artifacts:

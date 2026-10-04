@@ -1,0 +1,81 @@
+[
+ {
+  "at": "2026-10-03T06:27:32.393645",
+  "kind": "decision",
+  "title": "Simulated action completed",
+  "detail": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+  "status": "EXECUTED",
+  "link": {
+   "kind": "risk",
+   "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+  }
+ },
+ {
+  "at": "2026-10-03T06:27:32.369003",
+  "kind": "decision",
+  "title": "Approved by Store owner",
+  "detail": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+  "status": "APPROVED",
+  "link": {
+   "kind": "risk",
+   "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+  }
+ },
+ {
+  "at": "2026-10-03T06:27:32.197793",
+  "kind": "decision",
+  "title": "Waiting for approval",
+  "detail": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+  "status": "AWAITING_APPROVAL",
+  "link": {
+   "kind": "risk",
+   "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+  }
+ },
+ {
+  "at": "2026-10-03T06:27:32.196192",
+  "kind": "decision",
+  "title": "Recommendation prepared",
+  "detail": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+  "status": "EXECUTED",
+  "link": {
+   "kind": "risk",
+   "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+  }
+ },
+ {
+  "at": "2026-10-03T06:27:32.164357",
+  "kind": "investigation",
+  "title": "Investigation completed",
+  "detail": "The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98).",
+  "status": "CONCLUDED",
+  "link": {
+   "kind": "risk",
+   "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+  }
+ },
+ {
+  "at": "2026-10-03T06:27:31.438612",
+  "kind": "scan",
+  "title": "Business scan: opportunities",
+  "detail": "0 new opportunities",
+  "status": "COMPLETED",
+  "link": null
+ },
+ {
+  "at": "2026-10-03T06:27:31.221496",
+  "kind": "scan",
+  "title": "Business scan: risks",
+  "detail": "3 new risks found",
+  "status": "COMPLETED",
+  "link": null
+ },
+ {
+  "at": "2026-10-03T06:27:31.088423",
+  "kind": "simulation",
+  "title": "Scenario loaded: Stockout crisis",
+  "detail": "A best-seller is selling faster than usual while its supplier has slowed down. REACT spots the stock running out before the next delivery, prices the lost sales and recommends a reorder.",
+  "status": "COMPLETED",
+  "link": null
+ }
+]

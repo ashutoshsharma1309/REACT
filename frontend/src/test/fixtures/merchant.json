@@ -1,0 +1,115 @@
+{
+ "domain": "merchant",
+ "business_name": "Astra Retail",
+ "business_type": "Consumer electronics & mobile accessories",
+ "template": "electronics",
+ "city": "Bengaluru",
+ "state": "Karnataka",
+ "profile": {
+  "city": "Bengaluru",
+  "state": "Karnataka",
+  "locality": "Jayanagar",
+  "categories": [
+   "PHONES",
+   "CASES",
+   "CHARGE",
+   "AUDIO",
+   "WIRED",
+   "POWER",
+   "WEAR",
+   "COMP",
+   "STORAGE",
+   "HOME"
+  ],
+  "store_count": 1,
+  "business_name": "Astra Retail",
+  "business_type": "electronics"
+ },
+ "stores": [
+  {
+   "id": "d304d608-50db-4710-92c6-e2f2ce624ad2",
+   "code": "S1",
+   "name": "Astra Retail, Jayanagar",
+   "locality": "Jayanagar",
+   "region": "South Bengaluru",
+   "type": "PHYSICAL"
+  }
+ ],
+ "categories": [
+  {
+   "id": "15dfc558-6157-4b71-ae68-de6a6c29ee65",
+   "code": "CASES",
+   "name": "Cases & screen guards",
+   "target_margin": 0.52
+  },
+  {
+   "id": "14780df0-03c9-4f8d-b7b0-71f4c2a14ea6",
+   "code": "CHARGE",
+   "name": "Chargers & cables",
+   "target_margin": 0.4
+  },
+  {
+   "id": "b3319ed7-e2a2-416a-8ece-df106c5090e4",
+   "code": "COMP",
+   "name": "Computer accessories",
+   "target_margin": 0.32
+  },
+  {
+   "id": "9a6a0665-ba5e-4959-8a32-911404c17503",
+   "code": "STORAGE",
+   "name": "Memory cards & storage",
+   "target_margin": 0.2
+  },
+  {
+   "id": "e90b1c25-85e7-4a77-a152-7a74109b585b",
+   "code": "POWER",
+   "name": "Power banks",
+   "target_margin": 0.23
+  },
+  {
+   "id": "a31e82a9-abc0-4245-bb14-c0e42947a7e4",
+   "code": "HOME",
+   "name": "Smart home & electricals",
+   "target_margin": 0.32
+  },
+  {
+   "id": "246c4c25-4938-4faa-a9e8-d4b6270966cd",
+   "code": "WEAR",
+   "name": "Smart wearables",
+   "target_margin": 0.24
+  },
+  {
+   "id": "cb2df045-c1b2-4693-9210-423ada664485",
+   "code": "PHONES",
+   "name": "Smartphones",
+   "target_margin": 0.08
+  },
+  {
+   "id": "7f6ed7b5-9344-4881-9c1d-efb966586c50",
+   "code": "WIRED",
+   "name": "Wired audio",
+   "target_margin": 0.44
+  },
+  {
+   "id": "3968d5fa-f3a9-4b48-85b1-d409ca4bdc49",
+   "code": "AUDIO",
+   "name": "Wireless audio",
+   "target_margin": 0.27
+  }
+ ],
+ "counts": {
+  "products": 300,
+  "suppliers": 8,
+  "customers": 3949,
+  "orders": 4572
+ },
+ "data_window": {
+  "start": "2026-06-04T00:00:00",
+  "end": "2026-10-02T07:00:00",
+  "seed": 42,
+  "generator_version": "merchant-1.0"
+ },
+ "scenario": null,
+ "is_synthetic": true,
+ "source": "SYNTHETIC"
+}

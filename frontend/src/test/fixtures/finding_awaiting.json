@@ -1,0 +1,73 @@
+{
+ "kind": "risk",
+ "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+ "type": "STOCKOUT_RISK",
+ "title": "Wireless Speaker X may run out within a day",
+ "description": "1 unit left and selling about 5.0 a day. The next stock from SoundWave Wholesale is about 3 days away (open purchase order PO-260925-SOUN-S1-0222, expected 2026-10-01 and now overdue), so the shelf could be empty for 3.1 days.",
+ "status": "OPEN",
+ "detected_at": "2026-10-02T07:00:00",
+ "severity": "CRITICAL",
+ "confidence": null,
+ "entity": {
+  "type": "product",
+  "id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+  "name": "Wireless Speaker X",
+  "code": "SPKX"
+ },
+ "location": "Astra Retail, Jayanagar",
+ "impact": {
+  "value": 38819.21,
+  "currency": "INR",
+  "description": "About 16 units of sales lost over 3.1 days without stock",
+  "formula": "lost_sales = units_per_day * days_without_stock * unit_price; lost_margin = lost_units * unit_margin",
+  "basis": "SYNTHETIC"
+ },
+ "evidence_count": 61,
+ "stage": "AWAITING_APPROVAL",
+ "investigation": {
+  "id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+  "status": "COMPLETED",
+  "selected_hypothesis": "SUPPLIER_DELAY_SHORTAGE",
+  "selected_label": "Late deliveries left the shelf short",
+  "evidence_support_score": 1.0,
+  "result_status": null,
+  "action_type": null,
+  "decision_readiness": null,
+  "summary": null
+ },
+ "agent_run": {
+  "id": "902e03e3-4944-412c-91c6-c984a28c7d5b",
+  "status": "COMPLETED",
+  "selected_hypothesis": null,
+  "selected_label": null,
+  "evidence_support_score": null,
+  "result_status": "CONCLUDED",
+  "action_type": null,
+  "decision_readiness": null,
+  "summary": null
+ },
+ "decision": {
+  "id": "02515578-1f25-4fb8-9fb8-438c7ce281d9",
+  "status": "AWAITING_APPROVAL",
+  "selected_hypothesis": null,
+  "selected_label": null,
+  "evidence_support_score": null,
+  "result_status": null,
+  "action_type": "REORDER_PRODUCT",
+  "decision_readiness": "READY",
+  "summary": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00)."
+ },
+ "signal": null,
+ "supporting_metrics": {
+  "demand_basis": "last 14 days (in-stock days)",
+  "days_of_cover": 0.2,
+  "units_on_hand": 1,
+  "units_per_day": 5.0,
+  "units_on_order": 36,
+  "quoted_lead_days": 6,
+  "days_without_stock": 3.1,
+  "observed_lead_days": 9.2,
+  "open_purchase_orders": 1,
+  "days_until_next_stock": 3.3
+ }
+}

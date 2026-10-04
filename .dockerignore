@@ -1,0 +1,19 @@
+# Only alembic.ini, alembic/, app/, scripts/entrypoint.sh and requirements.lock are copied into the image.
+# Everything else is excluded so the build context stays small and nothing sensitive can be copied by mistake.
+**/.env
+**/.env.*
+.venv
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.git
+.github
+frontend
+infra
+docs
+tests
+var
+*.md
+**/node_modules
+**/cdk.out
+**/.DS_Store

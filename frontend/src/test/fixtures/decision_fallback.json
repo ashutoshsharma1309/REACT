@@ -1,0 +1,299 @@
+{
+ "decision_id": "7953e274-d404-4620-9a0b-cbe38a92cde9",
+ "agent_run_id": "49b54d85-21fc-4df1-b96e-792e1790fee3",
+ "investigation_id": "d3c91449-600f-4754-a805-84f1dbc6d046",
+ "subject_type": "OPPORTUNITY",
+ "incident_id": null,
+ "opportunity_id": "2cdb4b3e-95ac-40a6-a59d-0b36109daf70",
+ "risk_id": null,
+ "status": "AWAITING_APPROVAL",
+ "decision_readiness": "READY",
+ "action_type": "INCREASE_STOCK",
+ "target_type": "category",
+ "target_id": "Wireless audio",
+ "target_name": "Wireless audio",
+ "priority": "P3",
+ "summary": "Increase stock for Wireless audio: customers in one area are buying more (Evidence Support Score 0.98).",
+ "recommendation": "Increase stock: Buy extra stock to serve higher demand. Target: Wireless audio.",
+ "hypothesis_type": "REGIONAL_DEMAND_GROWTH",
+ "hypothesis_label": "Customers in one area are buying more",
+ "evidence_support_score": 0.9794,
+ "requires_human_approval": true,
+ "provider": "unavailable",
+ "llm_used": false,
+ "fallback_used": true,
+ "error": null,
+ "created_at": "2026-10-03T06:27:36.062268",
+ "updated_at": "2026-10-03T06:27:36.163456",
+ "problem_statement": "REGIONAL_OPPORTUNITY (MEDIUM): Wireless audio is selling 40% faster among customers in South Bengaluru. Conclusion: The available evidence strongly supports customers in one area are buying more as the opportunity explanation (Evidence Support Score 0.98).",
+ "rationale": "REGIONAL_DEMAND_GROWTH is strongly supported by the available records (Evidence Support Score 0.98; evidence d3cd790c-f29c-43ee-86e3-1d1e25b0e9f9, bb85a98b-ea7e-4374-a7a4-74c8b85a9333, 67cf5588-7ea8-44e3-9ea0-549b4a7b8539, b97c7e27-a808-4299-9ba5-868446b0b641). Wireless audio bought by South Bengaluru customers: 235 units against 168 before (+40%) Wireless audio in the other zones together: 113 units against 119 before 207 different customers bought in the last 28 days against 157 before The largest single customer bought 2% of the units The deterministic impact estimate attached to this decision quantifies the exposure; the recommended action is the catalogue default for this conclusion.",
+ "required_actions": [
+  "Simulated purchase plan created for the extra demand.",
+  "Review contradicting evidence 756c65ba-2b7d-4fe4-b1a7-a39c1d120e12"
+ ],
+ "alternatives": [
+  {
+   "summary": "Promote product",
+   "tradeoff": "Run a time-limited offer to sell down stock or grow a category.",
+   "action_type": "PROMOTE_PRODUCT"
+  },
+  {
+   "summary": "Contact customers",
+   "tradeoff": "Prepare an outreach list for a customer group (no message is sent).",
+   "action_type": "CONTACT_CUSTOMER"
+  }
+ ],
+ "risks": [
+  "Surplus stock if the demand does not last.",
+  "1 contradicting evidence item(s) exist (756c65ba-2b7d-4fe4-b1a7-a39c1d120e12)."
+ ],
+ "assumptions": [
+  "The higher demand continues for at least a month.",
+  "All figures are synthetic estimates from the deterministic impact engine."
+ ],
+ "evidence_ids": [
+  "d3cd790c-f29c-43ee-86e3-1d1e25b0e9f9",
+  "bb85a98b-ea7e-4374-a7a4-74c8b85a9333",
+  "67cf5588-7ea8-44e3-9ea0-549b4a7b8539",
+  "b97c7e27-a808-4299-9ba5-868446b0b641"
+ ],
+ "contradicting_evidence_ids": [
+  "756c65ba-2b7d-4fe4-b1a7-a39c1d120e12"
+ ],
+ "hypothesis_id": "955ca1a7-5b32-4275-9097-0c1934e8991d",
+ "expected_impact": {
+  "scope": {
+   "region": "South Bengaluru",
+   "category": "Wireless audio",
+   "product_id": null,
+   "entity_name": null,
+   "supplier_id": null,
+   "inventory_id": null,
+   "subject_type": "REGIONAL_OPPORTUNITY"
+  },
+  "domain": "merchant",
+  "inputs": {
+   "growth_pct": 39.9,
+   "unit_price": 1961.42,
+   "unit_margin": 518.52,
+   "incremental_units_per_day": 2.39
+  },
+  "source": "app/impact/engine.py via investigation.impact",
+  "wording": "Potential opportunity: synthetic, formula-based estimate; actual results depend on stock and execution.",
+  "currency": "INR",
+  "stock_needed": {
+   "unit": "INR",
+   "basis": "SYNTHETIC",
+   "value": 72505.62,
+   "inputs": {
+    "quantity": 50.2,
+    "unit_cost": 1442.9
+   },
+   "formula": "purchase_value = quantity * unit_cost",
+   "currency": "INR",
+   "components": {},
+   "description": "Stock to buy for the extra demand over 30 days (about 50 units at cost)",
+   "is_estimate": true
+  },
+  "total_includes": [
+   "potential_revenue"
+  ],
+  "estimated_total": 98561.21,
+  "impact_reference": {
+   "basis": "SYNTHETIC",
+   "source": "app/impact/engine.py via investigation.impact",
+   "currency": "INR",
+   "components": {
+    "stock_needed": 72505.62,
+    "potential_revenue": 98561.21
+   },
+   "is_estimate": true,
+   "estimated_total": 98561.21,
+   "investigation_id": "d3c91449-600f-4754-a805-84f1dbc6d046"
+  },
+  "potential_revenue": {
+   "unit": "INR",
+   "basis": "SYNTHETIC",
+   "value": 98561.21,
+   "inputs": {
+    "unit_price": 1961.42,
+    "unit_margin": 518.52,
+    "horizon_days": 30,
+    "capture_ratio": 0.7,
+    "incremental_units_per_day": 2.39
+   },
+   "formula": "potential_revenue = incremental_units_per_day * horizon_days * capture_ratio * unit_price; potential_margin = same units * unit_margin",
+   "currency": "INR",
+   "components": {
+    "potential_units": 50.25,
+    "potential_margin": 26055.59
+   },
+   "description": "About 50 extra units over 30 days if stock keeps up",
+   "is_estimate": true
+  },
+  "operational_constraints": [
+   {
+    "type": "stock",
+    "detail": "1 best-selling wireless audio item already has less stock than one lead time: Wavio Mini Speaker Black",
+    "signal": "days_of_cover"
+   }
+  ],
+  "potential_additional_demand": {
+   "basis": "28-day comparison",
+   "horizon_days": 30,
+   "units_per_day": 2.39,
+   "units_over_horizon": 72
+  }
+ },
+ "validation": {
+  "checks": [
+   {
+    "check": "target",
+    "detail": "category:Wireless audio",
+    "passed": true
+   },
+   {
+    "check": "reason",
+    "passed": true
+   },
+   {
+    "check": "evidence",
+    "detail": "4 supporting / 1 contradicting evidence ids, all present in investigation d3c91449-600f-4754-a805-84f1dbc6d046",
+    "passed": true
+   },
+   {
+    "check": "expected_impact",
+    "detail": "copied from the deterministic impact engine (investigation.impact)",
+    "passed": true
+   },
+   {
+    "check": "proposed_action",
+    "detail": "INCREASE_STOCK",
+    "passed": true
+   },
+   {
+    "check": "risks_assumptions",
+    "detail": "2 risks, 2 assumptions",
+    "passed": true
+   },
+   {
+    "check": "human_approval_required",
+    "passed": true
+   },
+   {
+    "check": "evidence_support_score_restated",
+    "detail": 0.9794,
+    "passed": true
+   },
+   {
+    "check": "readiness",
+    "detail": "READY",
+    "passed": true
+   }
+  ],
+  "passed": true
+ },
+ "timeline": [
+  {
+   "at": "2026-10-03T06:27:36.065028",
+   "actor": "decision_agent",
+   "event": "decision_created",
+   "status": "DECISION_READY",
+   "readiness": "READY",
+   "action_type": "INCREASE_STOCK"
+  },
+  {
+   "at": "2026-10-03T06:27:36.066374",
+   "actor": "decision_engine",
+   "event": "status_changed",
+   "to_status": "AWAITING_APPROVAL",
+   "from_status": "DECISION_READY"
+  },
+  {
+   "at": "2026-10-03T06:27:36.162806",
+   "actor": "decision_engine",
+   "event": "approval_requested",
+   "action_id": "8ace3193-0321-4026-9962-189a0cc7b92f",
+   "approval_id": "4c865a1e-9970-449c-95ef-570b427322f5"
+  }
+ ],
+ "approvals": [
+  {
+   "approval_id": "4c865a1e-9970-449c-95ef-570b427322f5",
+   "decision_id": "7953e274-d404-4620-9a0b-cbe38a92cde9",
+   "status": "PENDING",
+   "requested_at": "2026-10-03T06:27:36.161981",
+   "reviewed_at": null,
+   "reviewed_by": null,
+   "reason": null,
+   "approval_metadata": {
+    "reason": "REACT never executes without an explicit human approval",
+    "required": true
+   }
+  }
+ ],
+ "actions": [
+  {
+   "action_id": "8ace3193-0321-4026-9962-189a0cc7b92f",
+   "decision_id": "7953e274-d404-4620-9a0b-cbe38a92cde9",
+   "approval_id": null,
+   "action_type": "INCREASE_STOCK",
+   "target_type": "category",
+   "target_id": "Wireless audio",
+   "target_name": "Wireless audio",
+   "status": "PROPOSED",
+   "parameters": {
+    "lines": [
+     {
+      "product": "Wireless Speaker X",
+      "quantity": 81,
+      "supplier": "SoundWave Wholesale",
+      "unit_cost": 1799.0,
+      "product_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+      "estimated_cost": 145719.0
+     },
+     {
+      "product": "Wavio Buds Lite Black",
+      "quantity": 36,
+      "supplier": "Deccan Audio Traders",
+      "unit_cost": 879.0,
+      "product_id": "8b9f2895-a38a-457b-a3e0-4025e924fa62",
+      "estimated_cost": 31644.0
+     },
+     {
+      "product": "Wavio Neckband 200 Black",
+      "quantity": 28,
+      "supplier": "Deccan Audio Traders",
+      "unit_cost": 611.0,
+      "product_id": "5902ae74-ebe8-4c50-9621-590eeefc0301",
+      "estimated_cost": 17108.0
+     }
+    ],
+    "source": "deterministic action parameters (app/domains/merchant/actions.py)",
+    "priority": "P3",
+    "quantity": 145,
+    "estimated_cost": 194471.0,
+    "required_actions": [
+     "Simulated purchase plan created for the extra demand.",
+     "Review contradicting evidence 756c65ba-2b7d-4fe4-b1a7-a39c1d120e12"
+    ],
+    "estimated_cost_formula": "sum over lines of quantity * unit_cost",
+    "computed_at_business_date": "2026-10-02"
+   },
+   "simulated": true,
+   "result": {},
+   "executed_by": null,
+   "started_at": null,
+   "completed_at": null,
+   "error": null,
+   "transitions": [
+    {
+     "at": "2026-10-03T06:27:36.159664",
+     "by": "decision_engine",
+     "to": "PROPOSED"
+    }
+   ]
+  }
+ ],
+ "terminology": "evidence_support_score is the deterministic Evidence Support Score (not a probability); decision_readiness is a separate rule-based readiness state; expected_impact is copied from the deterministic impact engine."
+}

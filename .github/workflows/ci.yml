@@ -1,0 +1,193 @@
+# REACT continuous integration. Needs no AWS credentials: every job runs offline against local services.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend tests (unit + integration) and migrations
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: react
+          POSTGRES_PASSWORD: react
+          POSTGRES_DB: react
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U react -d react" --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      DATABASE_URL: postgresql+psycopg://react:react@localhost:5432/react
+      TEST_DATABASE_URL: postgresql+psycopg://react:react@localhost:5432/react_test
+      LLM_PROVIDER: deterministic
+      AUTO_CREATE_SCHEMA: "false"
+      SEED_ON_STARTUP: "false"
+      PGPASSWORD: react
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Migrations apply cleanly and match the models
+        run: |
+          alembic upgrade head
+          alembic check
+          alembic downgrade -1 && alembic upgrade head
+      - run: psql -h localhost -U react -d react -c "CREATE DATABASE react_test"
+      - name: Tests (AWS live tier is skipped)
+        run: pytest -p no:warnings
+
+  frontend:
+    name: Frontend typecheck, tests and build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+  infra:
+    name: CDK typecheck, assertion tests and synth
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: infra
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: infra/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npx cdk synth --quiet
+
+  docker:
+    name: Docker image build and container smoke test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: react
+          POSTGRES_PASSWORD: react
+          POSTGRES_DB: react
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U react -d react" --health-interval 5s --health-timeout 5s --health-retries 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: docker/setup-buildx-action@v3
+      - name: Build (not pushed)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          push: false
+          tags: react-api:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Image runs as a non-root user and contains no env files
+        run: |
+          test "$(docker run --rm --entrypoint id react-api:ci -u)" != "0"
+          ! docker run --rm --entrypoint sh react-api:ci -c 'ls -a /app | grep -E "^\.env"'
+      - name: Container migrates, seeds and becomes ready
+        run: |
+          docker run -d --name api --network host \
+            -e DB_HOST=localhost -e DB_USER=react -e DB_PASSWORD=react -e DB_NAME=react \
+            -e HISTORY_DAYS=30 -e AUTO_CREATE_SCHEMA=false -e APP_ENV=ci react-api:ci
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:8000/ready; then echo; break; fi
+            sleep 3
+          done
+          curl -fsS http://127.0.0.1:8000/ready | python3 -c "import json,sys; d=json.load(sys.stdin); assert d['status']=='ready', d; print(d['checks']['migrations'])"
+          curl -fsS http://127.0.0.1:8000/api/health
+          test "$(docker inspect --format '{{.State.Health.Status}}' api)" != "unhealthy"
+      - if: failure()
+        run: docker logs api || true
+
+  security:
+    name: Dependency vulnerability audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Python runtime dependencies (the ones in the image)
+        run: pipx run pip-audit -r requirements.lock --require-hashes --disable-pip
+      - name: Frontend dependencies
+        run: npm audit --audit-level=high
+        working-directory: frontend
+      - name: Infrastructure dependencies
+        run: npm audit --audit-level=high
+        working-directory: infra
+
+  e2e:
+    name: End-to-end (Playwright, Chromium)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    needs: [backend, frontend]
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      PGHOST: localhost
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      E2E_DATABASE_BASE: postgresql+psycopg://postgres:postgres@localhost:5432
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m venv .venv && .venv/bin/pip install -r requirements.txt
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - working-directory: frontend
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+          npm run e2e

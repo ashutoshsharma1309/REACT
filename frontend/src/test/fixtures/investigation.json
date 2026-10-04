@@ -1,0 +1,1013 @@
+{
+ "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+ "subject_type": "RISK",
+ "incident_id": null,
+ "opportunity_id": null,
+ "risk_id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+ "status": "COMPLETED",
+ "started_at": "2026-10-03T06:27:31.858684",
+ "completed_at": "2026-10-03T06:27:32.122869",
+ "summary": "The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98).",
+ "confidence": 1.0,
+ "confidence_label": "strongly supported",
+ "error": null,
+ "created_at": "2026-10-03T06:27:31.849163",
+ "updated_at": "2026-10-03T06:27:32.124577",
+ "conclusion": {
+  "kind": "risk_driver",
+  "note": "Evidence Support Score expresses how strongly the available records support the hypothesis. It is not a probability, a model confidence or a guarantee.",
+  "statement": "The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98).",
+  "determined": true,
+  "risk_driver": "SUPPLIER_DELAY_SHORTAGE",
+  "alternatives": [
+   {
+    "label": "Demand jumped faster than stock was replenished",
+    "hypothesis": "DEMAND_SURGE",
+    "support_label": "strongly supported",
+    "evidence_support_score": 0.9821
+   },
+   {
+    "label": "The reorder level is too low",
+    "hypothesis": "REORDER_POLICY_GAP",
+    "support_label": "insufficient support",
+    "evidence_support_score": 0.3848
+   },
+   {
+    "label": "A promotion pulled demand forward",
+    "hypothesis": "PROMOTION_DRIVEN_DEMAND",
+    "support_label": "insufficient support",
+    "evidence_support_score": 0.0834
+   },
+   {
+    "label": "One large order drained the stock",
+    "hypothesis": "BULK_ORDER_DEPLETION",
+    "support_label": "insufficient support",
+    "evidence_support_score": 0.0
+   }
+  ],
+  "support_label": "strongly supported",
+  "selected_label": "Late deliveries left the shelf short",
+  "margin_over_next": 0.0179,
+  "contributing_factor": "DEMAND_SURGE",
+  "selected_hypothesis": "SUPPLIER_DELAY_SHORTAGE",
+  "supporting_evidence": [
+   {
+    "unit": "share",
+    "claim": "SoundWave Wholesale: 50% of deliveries in the last 45 days were late (normal 13%)",
+    "value": 0.5,
+    "signal": "supplier_late_share_recent",
+    "details": {
+     "op": "gt",
+     "satisfied": true,
+     "threshold": 0.4,
+     "source_count": 8
+    },
+    "baseline": 0.133,
+    "supports": true,
+    "condition": "most recent deliveries were late",
+    "relevance": 0.625,
+    "source_id": "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "timestamp": "2026-10-01T20:00:00",
+    "hypothesis": "SUPPLIER_DELAY_SHORTAGE",
+    "source_ids": [
+     "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+     "46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+     "c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+     "88f32072-b67d-4fe0-a297-b1aa03d91889",
+     "7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+     "7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+     "b98cd639-ab93-437a-8a4d-dfd6122e9eca",
+     "52474fe9-89f2-4ca0-88d9-80cac0191ee3"
+    ],
+    "contradicts": false,
+    "source_type": "supplier_delivery",
+    "score_breakdown": {
+     "recency": 1.0,
+     "relevance": 0.625,
+     "consistency": 1.0,
+     "correlation": 1.0,
+     "source_reliability": 0.95
+    },
+    "evidence_support_score": 0.859
+   },
+   {
+    "unit": "of 6",
+    "claim": "SoundWave Wholesale: 3 of the last 6 deliveries arrived late",
+    "value": 3,
+    "signal": "supplier_late_deliveries_6",
+    "details": {
+     "op": "gte",
+     "satisfied": true,
+     "threshold": 3,
+     "source_count": 6
+    },
+    "baseline": null,
+    "supports": true,
+    "condition": "at least 3 of the last 6 deliveries late",
+    "relevance": 0.333,
+    "source_id": "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "timestamp": "2026-10-01T20:00:00",
+    "hypothesis": "SUPPLIER_DELAY_SHORTAGE",
+    "source_ids": [
+     "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+     "46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+     "c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+     "88f32072-b67d-4fe0-a297-b1aa03d91889",
+     "7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+     "7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d"
+    ],
+    "contradicts": false,
+    "source_type": "supplier_delivery",
+    "score_breakdown": {
+     "recency": 1.0,
+     "relevance": 0.333,
+     "consistency": 1.0,
+     "correlation": 1.0,
+     "source_reliability": 0.95
+    },
+    "evidence_support_score": 0.757
+   },
+   {
+    "unit": null,
+    "claim": "1 open purchase order is overdue (by up to 1 day)",
+    "value": true,
+    "signal": "open_po_overdue",
+    "details": {
+     "op": "true",
+     "satisfied": true,
+     "threshold": null,
+     "source_count": 1
+    },
+    "baseline": null,
+    "supports": true,
+    "condition": "the next order is already overdue",
+    "relevance": 0.667,
+    "source_id": "877de30e-09ab-4cfd-9279-eab342dc86b9",
+    "timestamp": "2026-10-01T20:00:00",
+    "hypothesis": "SUPPLIER_DELAY_SHORTAGE",
+    "source_ids": [
+     "877de30e-09ab-4cfd-9279-eab342dc86b9"
+    ],
+    "contradicts": false,
+    "source_type": "purchase_order",
+    "score_breakdown": {
+     "recency": 1.0,
+     "relevance": 0.667,
+     "consistency": 1.0,
+     "correlation": 1.0,
+     "source_reliability": 0.95
+    },
+    "evidence_support_score": 0.873
+   },
+   {
+    "unit": "days",
+    "claim": "SoundWave Wholesale: orders now take 8.2 days to arrive against a quoted 6 days",
+    "value": 2.2,
+    "signal": "supplier_lead_change_days",
+    "details": {
+     "op": "gt",
+     "satisfied": true,
+     "threshold": 2,
+     "source_count": 8
+    },
+    "baseline": 0.0,
+    "supports": true,
+    "condition": "orders take longer to arrive than quoted",
+    "relevance": 0.275,
+    "source_id": "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "timestamp": "2026-10-01T20:00:00",
+    "hypothesis": "SUPPLIER_DELAY_SHORTAGE",
+    "source_ids": [
+     "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+     "46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+     "c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+     "88f32072-b67d-4fe0-a297-b1aa03d91889",
+     "7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+     "7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+     "b98cd639-ab93-437a-8a4d-dfd6122e9eca",
+     "52474fe9-89f2-4ca0-88d9-80cac0191ee3"
+    ],
+    "contradicts": false,
+    "source_type": "supplier_delivery",
+    "score_breakdown": {
+     "recency": 1.0,
+     "relevance": 0.275,
+     "consistency": 1.0,
+     "correlation": 1.0,
+     "source_reliability": 0.95
+    },
+    "evidence_support_score": 0.736
+   },
+   {
+    "unit": "days",
+    "claim": "Out of stock on 2 of the last 14 days",
+    "value": 2,
+    "signal": "stockout_days_14",
+    "details": {
+     "op": "gte",
+     "satisfied": true,
+     "threshold": 1,
+     "source_count": 2
+    },
+    "baseline": 0.0,
+    "supports": true,
+    "condition": "the shelf has already been empty",
+    "relevance": 0.333,
+    "source_id": "bf6ffd2b-6250-48eb-ad6a-ec6a13363e6a",
+    "timestamp": "2026-10-01T20:00:00",
+    "hypothesis": "SUPPLIER_DELAY_SHORTAGE",
+    "source_ids": [
+     "bf6ffd2b-6250-48eb-ad6a-ec6a13363e6a",
+     "83b4334e-61e0-4c43-a468-ecc7807ffb49"
+    ],
+    "contradicts": false,
+    "source_type": "inventory_snapshot",
+    "score_breakdown": {
+     "recency": 1.0,
+     "relevance": 0.333,
+     "consistency": 1.0,
+     "correlation": 1.0,
+     "source_reliability": 0.9
+    },
+    "evidence_support_score": 0.747
+   }
+  ],
+  "recommended_next_step": "Chase the overdue order and, if it cannot arrive in time, buy a bridging quantity from another source.",
+  "contradicting_evidence": [],
+  "evidence_support_score": 1.0
+ },
+ "impact": {
+  "scope": {
+   "region": null,
+   "category": "Wireless audio",
+   "product_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+   "entity_name": "Wireless Speaker X",
+   "supplier_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b",
+   "inventory_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+   "subject_type": "STOCKOUT_RISK"
+  },
+  "domain": "merchant",
+  "inputs": {
+   "unit_price": 2477.82,
+   "unit_margin": 678.82,
+   "demand_basis": "last 14 days (in-stock days)",
+   "days_of_cover": 0.2,
+   "units_per_day": 5.0,
+   "next_stock_basis": "open purchase order PO-260925-SOUN-S1-0222, expected 2026-10-01 and now overdue",
+   "days_until_next_stock": 3.3
+  },
+  "wording": "Estimated impact: synthetic, formula-based estimate from the merchant's records; not a guaranteed outcome.",
+  "currency": "INR",
+  "lost_sales": {
+   "unit": "INR",
+   "basis": "SYNTHETIC",
+   "value": 38819.21,
+   "inputs": {
+    "unit_price": 2477.82,
+    "unit_margin": 678.82,
+    "units_per_day": 5.0,
+    "days_without_stock": 3.1
+   },
+   "formula": "lost_sales = units_per_day * days_without_stock * unit_price; lost_margin = lost_units * unit_margin",
+   "currency": "INR",
+   "components": {
+    "lost_units": 15.67,
+    "lost_margin": 10634.87
+   },
+   "description": "About 16 units of sales lost over 3.1 days without stock",
+   "is_estimate": true
+  },
+  "reorder_cost": {
+   "unit": "INR",
+   "basis": "SYNTHETIC",
+   "value": 169106.0,
+   "inputs": {
+    "quantity": 94.0,
+    "unit_cost": 1799.0
+   },
+   "formula": "purchase_value = quantity * unit_cost",
+   "currency": "INR",
+   "components": {},
+   "description": "Cost of the suggested reorder (94 units)",
+   "is_estimate": true
+  },
+  "total_includes": [
+   "lost_sales"
+  ],
+  "estimated_total": 38819.21,
+  "reorder_suggestion": {
+   "formula": "quantity = ceil(units_per_day x (lead_days + cover_days + 3 safety days) - on_hand - on_order)",
+   "on_hand": 1,
+   "on_order": 36,
+   "quantity": 94,
+   "supplier": "SoundWave Wholesale",
+   "lead_days": 9.2,
+   "unit_cost": 1799.0,
+   "cover_days": 14,
+   "supplier_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b",
+   "demand_basis": "last 14 days (in-stock days)",
+   "units_per_day": 5.0
+  },
+  "operational_constraints": [
+   {
+    "type": "supplier_lead_time",
+    "detail": "SoundWave Wholesale currently takes about 9 days to deliver against a quoted 6 days",
+    "signal": "supplier_lead_change_days"
+   }
+  ]
+ },
+ "hypotheses": [
+  {
+   "hypothesis_id": "ca65903e-827d-49a8-99dd-c17b3df672c9",
+   "type": "SUPPLIER_DELAY_SHORTAGE",
+   "label": "Late deliveries left the shelf short",
+   "rank": 1,
+   "description": "The supplier has been delivering late, so stock that should have arrived has not, and the shelf is running empty.",
+   "triggered_signals": [
+    {
+     "op": "gt",
+     "unit": "share",
+     "label": "supplier delivering late",
+     "value": 0.5,
+     "signal": "supplier_late_share_recent",
+     "strength": 0.62,
+     "threshold": 0.4
+    },
+    {
+     "op": "true",
+     "unit": null,
+     "label": "an order is overdue",
+     "value": true,
+     "signal": "open_po_overdue",
+     "strength": 1.0,
+     "threshold": null
+    },
+    {
+     "op": "gt",
+     "unit": "days",
+     "label": "lead time longer than quoted",
+     "value": 2.2,
+     "signal": "supplier_lead_change_days",
+     "strength": 0.55,
+     "threshold": 2
+    }
+   ],
+   "supporting_conditions": [
+    {
+     "op": "gt",
+     "label": "most recent deliveries were late",
+     "signal": "supplier_late_share_recent",
+     "weight": 3,
+     "threshold": 0.4
+    },
+    {
+     "op": "gte",
+     "label": "at least 3 of the last 6 deliveries late",
+     "signal": "supplier_late_deliveries_6",
+     "weight": 2,
+     "threshold": 3
+    },
+    {
+     "op": "true",
+     "label": "the next order is already overdue",
+     "signal": "open_po_overdue",
+     "weight": 2,
+     "threshold": null
+    },
+    {
+     "op": "gt",
+     "label": "orders take longer to arrive than quoted",
+     "signal": "supplier_lead_change_days",
+     "weight": 1.5,
+     "threshold": 2
+    },
+    {
+     "op": "gte",
+     "label": "the shelf has already been empty",
+     "signal": "stockout_days_14",
+     "weight": 1,
+     "threshold": 1
+    }
+   ],
+   "contradicting_conditions": [
+    {
+     "op": "lt",
+     "label": "supplier delivering on time",
+     "signal": "supplier_late_share_recent",
+     "weight": 3,
+     "threshold": 0.2
+    },
+    {
+     "op": "lt",
+     "label": "lead time as quoted",
+     "signal": "supplier_lead_change_days",
+     "weight": 1.5,
+     "threshold": 1
+    }
+   ],
+   "initial_confidence": 0.4601,
+   "evidence_support_score": 1.0,
+   "supporting_count": 5,
+   "contradicting_count": 0,
+   "status": "SUPPORTED",
+   "score_breakdown": {
+    "formula": "ESS = \u03a3(w\u00b7score | supports) / (\u03a3(w\u00b7score | supports) + \u03a3(w\u00b7score | contradicts) + 0.5\u00b7\u03a3(w | unobserved supporting))",
+    "unknown_weight": 0.0,
+    "unknown_penalty": 0.5,
+    "conditions_total": 7,
+    "supporting_count": 5,
+    "supporting_weight": 7.688,
+    "contradicting_count": 0,
+    "contradicting_weight": 0,
+    "evidence_support_score": 1.0
+   }
+  },
+  {
+   "hypothesis_id": "97baaa2e-c016-4eaf-b5c7-ae941424b472",
+   "type": "DEMAND_SURGE",
+   "label": "Demand jumped faster than stock was replenished",
+   "rank": 2,
+   "description": "More customers are buying the product than usual, so stock ran down faster than the normal reorder cycle refills it.",
+   "triggered_signals": [
+    {
+     "op": "gt",
+     "unit": "%",
+     "label": "demand up",
+     "value": 61.8,
+     "signal": "demand_change_pct",
+     "strength": 1.0,
+     "threshold": 25
+    },
+    {
+     "op": "lt",
+     "unit": "%",
+     "label": "stock down",
+     "value": -96.5,
+     "signal": "stock_change_pct",
+     "strength": 1.0,
+     "threshold": -30
+    }
+   ],
+   "supporting_conditions": [
+    {
+     "op": "gt",
+     "label": "demand up versus the previous 8 weeks",
+     "signal": "demand_change_pct",
+     "weight": 3,
+     "threshold": 25
+    },
+    {
+     "op": "gt",
+     "label": "more different customers buying",
+     "signal": "distinct_customers_change_pct",
+     "weight": 2,
+     "threshold": 15
+    },
+    {
+     "op": "lt",
+     "label": "stock well below its normal level",
+     "signal": "stock_change_pct",
+     "weight": 1.5,
+     "threshold": -30
+    },
+    {
+     "op": "lt",
+     "label": "less than 5 days of stock left",
+     "signal": "days_of_cover",
+     "weight": 1,
+     "threshold": 5
+    },
+    {
+     "op": "lt",
+     "label": "growth spread across many customers",
+     "signal": "top_customer_share",
+     "weight": 1,
+     "threshold": 0.25
+    },
+    {
+     "op": "gt",
+     "label": "the wider category is selling more too",
+     "signal": "category_demand_change_pct",
+     "weight": 0.5,
+     "threshold": 10
+    }
+   ],
+   "contradicting_conditions": [
+    {
+     "op": "lt",
+     "label": "demand not higher than normal",
+     "signal": "demand_change_pct",
+     "weight": 3,
+     "threshold": 5
+    },
+    {
+     "op": "gt",
+     "label": "one customer bought most of it",
+     "signal": "top_customer_share",
+     "weight": 2,
+     "threshold": 0.4
+    }
+   ],
+   "initial_confidence": 0.3699,
+   "evidence_support_score": 0.9821,
+   "supporting_count": 5,
+   "contradicting_count": 1,
+   "status": "SUPPORTED",
+   "score_breakdown": {
+    "formula": "ESS = \u03a3(w\u00b7score | supports) / (\u03a3(w\u00b7score | supports) + \u03a3(w\u00b7score | contradicts) + 0.5\u00b7\u03a3(w | unobserved supporting))",
+    "unknown_weight": 0.0,
+    "unknown_penalty": 0.5,
+    "conditions_total": 8,
+    "supporting_count": 5,
+    "supporting_weight": 7.246,
+    "contradicting_count": 1,
+    "contradicting_weight": 0.132,
+    "evidence_support_score": 0.9821
+   }
+  },
+  {
+   "hypothesis_id": "f591917f-3061-4dbf-ab6c-a595c9c8549d",
+   "type": "REORDER_POLICY_GAP",
+   "label": "The reorder level is too low",
+   "rank": 3,
+   "description": "Stock is reordered too late or in too small amounts for today's demand and lead time, even though supply is normal.",
+   "triggered_signals": [
+    {
+     "op": "lt",
+     "unit": "ratio",
+     "label": "reorder level below need",
+     "value": 0.79,
+     "signal": "reorder_cover_ratio",
+     "strength": 0.51,
+     "threshold": 0.8
+    }
+   ],
+   "supporting_conditions": [
+    {
+     "op": "lt",
+     "label": "reorder level below what the lead time needs",
+     "signal": "reorder_cover_ratio",
+     "weight": 3,
+     "threshold": 0.8
+    },
+    {
+     "op": "true",
+     "label": "no order placed for the next delivery",
+     "signal": "no_open_po",
+     "weight": 2,
+     "threshold": null
+    },
+    {
+     "op": "lt",
+     "label": "supplier delivering normally",
+     "signal": "supplier_late_share_recent",
+     "weight": 1,
+     "threshold": 0.25
+    },
+    {
+     "op": "lt",
+     "label": "demand close to normal",
+     "signal": "demand_change_pct",
+     "weight": 1,
+     "threshold": 15
+    }
+   ],
+   "contradicting_conditions": [
+    {
+     "op": "true",
+     "label": "an order was placed but is late",
+     "signal": "open_po_overdue",
+     "weight": 2,
+     "threshold": null
+    },
+    {
+     "op": "gt",
+     "label": "reorder level is adequate",
+     "signal": "reorder_cover_ratio",
+     "weight": 2,
+     "threshold": 1.1
+    }
+   ],
+   "initial_confidence": 0.1404,
+   "evidence_support_score": 0.3848,
+   "supporting_count": 1,
+   "contradicting_count": 4,
+   "status": "NOT_SUPPORTED",
+   "score_breakdown": {
+    "formula": "ESS = \u03a3(w\u00b7score | supports) / (\u03a3(w\u00b7score | supports) + \u03a3(w\u00b7score | contradicts) + 0.5\u00b7\u03a3(w | unobserved supporting))",
+    "unknown_weight": 0.0,
+    "unknown_penalty": 0.5,
+    "conditions_total": 6,
+    "supporting_count": 1,
+    "supporting_weight": 1.929,
+    "contradicting_count": 4,
+    "contradicting_weight": 3.084,
+    "evidence_support_score": 0.3848
+   }
+  },
+  {
+   "hypothesis_id": "02fd5038-1fd3-42bd-bf50-29c0b4f0ba25",
+   "type": "PROMOTION_DRIVEN_DEMAND",
+   "label": "A promotion pulled demand forward",
+   "rank": 4,
+   "description": "A discount or promotion sold more units than the stock plan expected.",
+   "triggered_signals": [],
+   "supporting_conditions": [
+    {
+     "op": "true",
+     "label": "a promotion was running",
+     "signal": "promotion_active",
+     "weight": 3,
+     "threshold": null
+    },
+    {
+     "op": "gt",
+     "label": "discounts deeper than normal",
+     "signal": "discount_rate_change_pts",
+     "weight": 2,
+     "threshold": 4
+    },
+    {
+     "op": "gt",
+     "label": "demand up",
+     "signal": "demand_change_pct",
+     "weight": 1,
+     "threshold": 20
+    }
+   ],
+   "contradicting_conditions": [
+    {
+     "op": "lt",
+     "label": "discounts at their normal level",
+     "signal": "discount_rate_change_pts",
+     "weight": 3,
+     "threshold": 1.5
+    },
+    {
+     "op": "false",
+     "label": "no promotion running",
+     "signal": "promotion_active",
+     "weight": 1.5,
+     "threshold": null
+    }
+   ],
+   "initial_confidence": 0.0185,
+   "evidence_support_score": 0.0834,
+   "supporting_count": 1,
+   "contradicting_count": 4,
+   "status": "NOT_SUPPORTED",
+   "score_breakdown": {
+    "formula": "ESS = \u03a3(w\u00b7score | supports) / (\u03a3(w\u00b7score | supports) + \u03a3(w\u00b7score | contradicts) + 0.5\u00b7\u03a3(w | unobserved supporting))",
+    "unknown_weight": 0.0,
+    "unknown_penalty": 0.5,
+    "conditions_total": 5,
+    "supporting_count": 1,
+    "supporting_weight": 0.549,
+    "contradicting_count": 4,
+    "contradicting_weight": 6.036,
+    "evidence_support_score": 0.0834
+   }
+  },
+  {
+   "hypothesis_id": "c3265fc9-f17c-451f-9bcd-bf641bfbe236",
+   "type": "BULK_ORDER_DEPLETION",
+   "label": "One large order drained the stock",
+   "rank": 5,
+   "description": "A single customer bought an unusually large quantity, emptying the shelf for everyone else.",
+   "triggered_signals": [],
+   "supporting_conditions": [
+    {
+     "op": "gt",
+     "label": "one customer bought most units",
+     "signal": "top_customer_share",
+     "weight": 3,
+     "threshold": 0.35
+    },
+    {
+     "op": "lt",
+     "label": "no more customers than usual",
+     "signal": "distinct_customers_change_pct",
+     "weight": 1.5,
+     "threshold": 5
+    }
+   ],
+   "contradicting_conditions": [
+    {
+     "op": "lt",
+     "label": "no single customer dominated",
+     "signal": "top_customer_share",
+     "weight": 3,
+     "threshold": 0.2
+    },
+    {
+     "op": "gt",
+     "label": "many more customers than usual",
+     "signal": "distinct_customers_change_pct",
+     "weight": 1.5,
+     "threshold": 15
+    }
+   ],
+   "initial_confidence": 0.0111,
+   "evidence_support_score": 0.0,
+   "supporting_count": 0,
+   "contradicting_count": 4,
+   "status": "NOT_SUPPORTED",
+   "score_breakdown": {
+    "formula": "ESS = \u03a3(w\u00b7score | supports) / (\u03a3(w\u00b7score | supports) + \u03a3(w\u00b7score | contradicts) + 0.5\u00b7\u03a3(w | unobserved supporting))",
+    "unknown_weight": 0.0,
+    "unknown_penalty": 0.5,
+    "conditions_total": 4,
+    "supporting_count": 0,
+    "supporting_weight": 0,
+    "contradicting_count": 4,
+    "contradicting_weight": 6.117,
+    "evidence_support_score": 0.0
+   }
+  }
+ ],
+ "evidence_count": 25,
+ "trace": [
+  {
+   "sequence": 1,
+   "timestamp": "2026-10-03T06:27:31.850814",
+   "step": "created",
+   "message": "Investigation created for risk 390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+   "details": {
+    "subject_id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+   },
+   "duration_ms": 0.0
+  },
+  {
+   "sequence": 2,
+   "timestamp": "2026-10-03T06:27:31.860517",
+   "step": "started",
+   "message": "Evidence collection started",
+   "details": {
+    "status": "COLLECTING_EVIDENCE"
+   },
+   "duration_ms": 1.8
+  },
+  {
+   "sequence": 3,
+   "timestamp": "2026-10-03T06:27:31.885874",
+   "step": "tool",
+   "message": "get_product_sales: retrieved 57 record(s)",
+   "details": {
+    "tool": "get_product_sales",
+    "count": 57
+   },
+   "duration_ms": 25.4
+  },
+  {
+   "sequence": 4,
+   "timestamp": "2026-10-03T06:27:31.890486",
+   "step": "tool",
+   "message": "get_supplier_history: retrieved 21 record(s)",
+   "details": {
+    "tool": "get_supplier_history",
+    "count": 21
+   },
+   "duration_ms": 4.6
+  },
+  {
+   "sequence": 5,
+   "timestamp": "2026-10-03T06:27:31.896905",
+   "step": "tool",
+   "message": "get_inventory_status: retrieved 1 record(s)",
+   "details": {
+    "tool": "get_inventory_status",
+    "count": 1
+   },
+   "duration_ms": 6.4
+  },
+  {
+   "sequence": 6,
+   "timestamp": "2026-10-03T06:27:31.903092",
+   "step": "tool",
+   "message": "get_sales_history: retrieved 120 record(s)",
+   "details": {
+    "tool": "get_sales_history",
+    "count": 120
+   },
+   "duration_ms": 6.2
+  },
+  {
+   "sequence": 7,
+   "timestamp": "2026-10-03T06:27:31.905854",
+   "step": "tool",
+   "message": "get_pricing_history: retrieved 1 record(s)",
+   "details": {
+    "tool": "get_pricing_history",
+    "count": 1
+   },
+   "duration_ms": 2.8
+  },
+  {
+   "sequence": 8,
+   "timestamp": "2026-10-03T06:27:31.918636",
+   "step": "tool",
+   "message": "get_discount_history: retrieved 85 record(s)",
+   "details": {
+    "tool": "get_discount_history",
+    "count": 85
+   },
+   "duration_ms": 12.8
+  },
+  {
+   "sequence": 9,
+   "timestamp": "2026-10-03T06:27:31.924195",
+   "step": "tool",
+   "message": "get_competitor_prices: retrieved 8 record(s)",
+   "details": {
+    "tool": "get_competitor_prices",
+    "count": 8
+   },
+   "duration_ms": 5.6
+  },
+  {
+   "sequence": 10,
+   "timestamp": "2026-10-03T06:27:31.950485",
+   "step": "tool",
+   "message": "get_category_performance: retrieved 15 record(s)",
+   "details": {
+    "tool": "get_category_performance",
+    "count": 15
+   },
+   "duration_ms": 26.3
+  },
+  {
+   "sequence": 11,
+   "timestamp": "2026-10-03T06:27:31.950539",
+   "step": "signals",
+   "message": "Derived 29 signals from 8 tool call(s)",
+   "details": {
+    "signals": 29
+   },
+   "duration_ms": 0.1
+  },
+  {
+   "sequence": 12,
+   "timestamp": "2026-10-03T06:27:31.954229",
+   "step": "hypotheses",
+   "message": "Generated 5 hypotheses",
+   "details": {
+    "hypotheses": [
+     {
+      "type": "SUPPLIER_DELAY_SHORTAGE",
+      "initial_confidence": 0.4601
+     },
+     {
+      "type": "DEMAND_SURGE",
+      "initial_confidence": 0.3699
+     },
+     {
+      "type": "REORDER_POLICY_GAP",
+      "initial_confidence": 0.1404
+     },
+     {
+      "type": "PROMOTION_DRIVEN_DEMAND",
+      "initial_confidence": 0.0185
+     },
+     {
+      "type": "BULK_ORDER_DEPLETION",
+      "initial_confidence": 0.0111
+     }
+    ]
+   },
+   "duration_ms": 3.7
+  },
+  {
+   "sequence": 13,
+   "timestamp": "2026-10-03T06:27:31.961542",
+   "step": "evidence",
+   "message": "Collected 25 evidence items across 5 hypotheses",
+   "details": {
+    "evidence_items": 25
+   },
+   "duration_ms": 7.3
+  },
+  {
+   "sequence": 14,
+   "timestamp": "2026-10-03T06:27:31.995007",
+   "step": "scoring",
+   "message": "Scored evidence and hypotheses (Evidence Support Score)",
+   "details": {
+    "scores": {
+     "DEMAND_SURGE": 0.9821,
+     "REORDER_POLICY_GAP": 0.3848,
+     "BULK_ORDER_DEPLETION": 0.0,
+     "PROMOTION_DRIVEN_DEMAND": 0.0834,
+     "SUPPLIER_DELAY_SHORTAGE": 1.0
+    }
+   },
+   "duration_ms": 33.5
+  },
+  {
+   "sequence": 15,
+   "timestamp": "2026-10-03T06:27:31.995108",
+   "step": "conclusion",
+   "message": "Generated conclusion: The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98).",
+   "details": {
+    "selected": "SUPPLIER_DELAY_SHORTAGE",
+    "evidence_support_score": 1.0
+   },
+   "duration_ms": 0.1
+  },
+  {
+   "sequence": 16,
+   "timestamp": "2026-10-03T06:27:32.122322",
+   "step": "impact",
+   "message": "Impact analysis completed (estimated total 38819.21)",
+   "details": {
+    "estimated_total": 38819.21
+   },
+   "duration_ms": 127.2
+  },
+  {
+   "sequence": 17,
+   "timestamp": "2026-10-03T06:27:32.122740",
+   "step": "report",
+   "message": "Structured investigation report generated",
+   "details": {},
+   "duration_ms": 0.4
+  },
+  {
+   "sequence": 18,
+   "timestamp": "2026-10-03T06:27:32.122879",
+   "step": "completed",
+   "message": "Investigation completed in 264 ms",
+   "details": {
+    "status": "COMPLETED"
+   },
+   "duration_ms": 0.1
+  }
+ ],
+ "key_signals": [
+  {
+   "unit": "share",
+   "claim": "SoundWave Wholesale: 50% of deliveries in the last 45 days were late (normal 13%)",
+   "label": "Supplier late deliveries (45 days)",
+   "value": 0.5,
+   "signal": "supplier_late_share_recent",
+   "display": "50%",
+   "condition": "most recent deliveries were late",
+   "direction": "none",
+   "source_type": "supplier_delivery",
+   "record_count": 8,
+   "baseline_display": "13%"
+  },
+  {
+   "unit": null,
+   "claim": "1 open purchase order is overdue (by up to 1 day)",
+   "label": "Next delivery overdue",
+   "value": true,
+   "signal": "open_po_overdue",
+   "display": "Yes",
+   "condition": "the next order is already overdue",
+   "direction": "none",
+   "source_type": "purchase_order",
+   "record_count": 1,
+   "baseline_display": null
+  },
+  {
+   "unit": "of 6",
+   "claim": "SoundWave Wholesale: 3 of the last 6 deliveries arrived late",
+   "label": "Late of last 6 deliveries",
+   "value": 3,
+   "signal": "supplier_late_deliveries_6",
+   "display": "3 of 6",
+   "condition": "at least 3 of the last 6 deliveries late",
+   "direction": "none",
+   "source_type": "supplier_delivery",
+   "record_count": 6,
+   "baseline_display": null
+  },
+  {
+   "unit": "%",
+   "claim": "Demand changed +62% versus the previous 8 weeks (3.1 to 5.0 units a day)",
+   "label": "Sales",
+   "value": 61.8,
+   "signal": "demand_change_pct",
+   "display": "\u2191 62%",
+   "condition": "demand up versus the previous 8 weeks",
+   "direction": "up",
+   "source_type": "order_item",
+   "record_count": 57,
+   "baseline_display": null
+  },
+  {
+   "unit": "%",
+   "claim": "57 different customers bought it in 14 days (normal about 42)",
+   "label": "Customers buying",
+   "value": 37.3,
+   "signal": "distinct_customers_change_pct",
+   "display": "\u2191 37%",
+   "condition": "more different customers buying",
+   "direction": "up",
+   "source_type": "order_item",
+   "record_count": 57,
+   "baseline_display": null
+  }
+ ],
+ "terminology": "confidence = Evidence Support Score (strength of support in the available records). It is not a statistical probability or model confidence."
+}

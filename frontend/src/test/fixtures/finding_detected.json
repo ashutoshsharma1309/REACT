@@ -1,0 +1,43 @@
+{
+ "kind": "risk",
+ "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+ "type": "STOCKOUT_RISK",
+ "title": "Wireless Speaker X may run out within a day",
+ "description": "1 unit left and selling about 5.0 a day. The next stock from SoundWave Wholesale is about 3 days away (open purchase order PO-260925-SOUN-S1-0222, expected 2026-10-01 and now overdue), so the shelf could be empty for 3.1 days.",
+ "status": "OPEN",
+ "detected_at": "2026-10-02T07:00:00",
+ "severity": "CRITICAL",
+ "confidence": null,
+ "entity": {
+  "type": "product",
+  "id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+  "name": "Wireless Speaker X",
+  "code": "SPKX"
+ },
+ "location": "Astra Retail, Jayanagar",
+ "impact": {
+  "value": 38819.21,
+  "currency": "INR",
+  "description": "About 16 units of sales lost over 3.1 days without stock",
+  "formula": "lost_sales = units_per_day * days_without_stock * unit_price; lost_margin = lost_units * unit_margin",
+  "basis": "SYNTHETIC"
+ },
+ "evidence_count": 61,
+ "stage": "DETECTED",
+ "investigation": null,
+ "agent_run": null,
+ "decision": null,
+ "signal": null,
+ "supporting_metrics": {
+  "demand_basis": "last 14 days (in-stock days)",
+  "days_of_cover": 0.2,
+  "units_on_hand": 1,
+  "units_per_day": 5.0,
+  "units_on_order": 36,
+  "quoted_lead_days": 6,
+  "days_without_stock": 3.1,
+  "observed_lead_days": 9.2,
+  "open_purchase_orders": 1,
+  "days_until_next_stock": 3.3
+ }
+}

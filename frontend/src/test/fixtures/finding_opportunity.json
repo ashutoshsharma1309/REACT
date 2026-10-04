@@ -1,0 +1,41 @@
+{
+ "kind": "opportunity",
+ "id": "2cdb4b3e-95ac-40a6-a59d-0b36109daf70",
+ "type": "REGIONAL_OPPORTUNITY",
+ "title": "Wireless audio is selling 40% faster among customers in South Bengaluru",
+ "description": "235 units bought by South Bengaluru customers in the last 28 days against 168 in the 28 days before.",
+ "status": "NEW",
+ "detected_at": "2026-10-02T07:00:00",
+ "severity": null,
+ "confidence": "MEDIUM",
+ "entity": {
+  "type": "category",
+  "id": null,
+  "name": "Wireless audio",
+  "code": null
+ },
+ "location": "South Bengaluru",
+ "impact": {
+  "value": 98561.21,
+  "currency": "INR",
+  "description": "About 50 extra units over 30 days if stock keeps up",
+  "formula": "potential_revenue = incremental_units_per_day * horizon_days * capture_ratio * unit_price; potential_margin = same units * unit_margin",
+  "basis": "SYNTHETIC"
+ },
+ "evidence_count": 50,
+ "stage": "DETECTED",
+ "investigation": null,
+ "agent_run": null,
+ "decision": null,
+ "signal": "regional_demand_growth",
+ "supporting_metrics": {
+  "z": 3.34,
+  "p_value": 3.327993028601206e-06,
+  "growth_pct": 39.9,
+  "units_recent": 235,
+  "revenue_recent": 460933.0,
+  "units_previous": 168,
+  "customers_recent": 207,
+  "customers_previous": 157
+ }
+}

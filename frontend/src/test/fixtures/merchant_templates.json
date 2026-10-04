@@ -1,0 +1,58 @@
+[
+ {
+  "key": "electronics",
+  "label": "Consumer electronics & mobile accessories",
+  "categories": [
+   {
+    "code": "PHONES",
+    "name": "Smartphones",
+    "description": "Entry and mid-range smartphones"
+   },
+   {
+    "code": "CASES",
+    "name": "Cases & screen guards",
+    "description": "Phone cases, tempered glass, guards and grips"
+   },
+   {
+    "code": "CHARGE",
+    "name": "Chargers & cables",
+    "description": "Wall and car chargers, cables, adapters"
+   },
+   {
+    "code": "AUDIO",
+    "name": "Wireless audio",
+    "description": "Bluetooth speakers, earbuds, neckbands, headphones"
+   },
+   {
+    "code": "WIRED",
+    "name": "Wired audio",
+    "description": "Wired earphones, AUX cables and audio adapters"
+   },
+   {
+    "code": "POWER",
+    "name": "Power banks",
+    "description": "Portable power banks"
+   },
+   {
+    "code": "WEAR",
+    "name": "Smart wearables",
+    "description": "Smartwatches, fitness bands and straps"
+   },
+   {
+    "code": "COMP",
+    "name": "Computer accessories",
+    "description": "Mice, keyboards, hubs, pen drives, webcams"
+   },
+   {
+    "code": "STORAGE",
+    "name": "Memory cards & storage",
+    "description": "microSD cards, SSDs and card readers"
+   },
+   {
+    "code": "HOME",
+    "name": "Smart home & electricals",
+    "description": "Smart bulbs, plugs, extension boards"
+   }
+  ]
+ }
+]

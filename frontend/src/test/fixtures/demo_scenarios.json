@@ -1,0 +1,32 @@
+[
+ {
+  "scenario": "stockout_crisis",
+  "label": "Stockout crisis",
+  "story": "A best-seller is selling much faster than usual while its supplier has slowed down. REACT spots the empty shelf before the next delivery, prices the lost sales and recommends a reorder."
+ },
+ {
+  "scenario": "demand_opportunity",
+  "label": "Demand opportunity",
+  "story": "One category is selling much faster among customers in the store's own neighbourhood. REACT explains why and sizes the extra revenue."
+ },
+ {
+  "scenario": "supplier_delay",
+  "label": "Supplier delay",
+  "story": "A regular supplier has started delivering late, order after order. REACT traces which products depend on it and what the delays put at risk."
+ },
+ {
+  "scenario": "margin_leakage",
+  "label": "Margin leakage",
+  "story": "A product is selling more than ever, but each sale earns less: the supplier raised its price and the shelf price never changed."
+ },
+ {
+  "scenario": "excess_inventory",
+  "label": "Excess inventory",
+  "story": "A large lot bought months ago is barely selling. REACT shows how much cash is locked in the shelf and what to do about it."
+ },
+ {
+  "scenario": "baseline",
+  "label": "Normal business",
+  "story": "Reset to the merchant's normal trading baseline and run a business scan."
+ }
+]

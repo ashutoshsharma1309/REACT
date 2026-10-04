@@ -1,0 +1,16 @@
+[
+ {
+  "id": "92cec023-2ce3-44e7-963f-9d1cb3d5e863",
+  "kind": "evidence_pack",
+  "decision_id": "02515578-1f25-4fb8-9fb8-438c7ce281d9",
+  "trigger": "decision.executed",
+  "status": "STORED",
+  "storage_backend": "local",
+  "content_type": "application/json",
+  "size_bytes": 41347,
+  "sha256": "a754eaf99286cf0db38352545d23101396d69ffa6acad2e1fb6ea02cacc30e4f",
+  "error": null,
+  "created_at": "2026-10-03T06:27:32.421879",
+  "download_path": "/artifacts/92cec023-2ce3-44e7-963f-9d1cb3d5e863/download"
+ }
+]

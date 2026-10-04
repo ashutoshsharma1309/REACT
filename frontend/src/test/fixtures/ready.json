@@ -1,0 +1,39 @@
+{
+ "status": "ready",
+ "app": "REACT",
+ "version": "0.6.0",
+ "environment": "development",
+ "checks": {
+  "database": {
+   "ok": true,
+   "status": "UP"
+  },
+  "migrations": {
+   "ok": true,
+   "status": "NOT_MANAGED",
+   "detail": "schema created by AUTO_CREATE_SCHEMA (local development)",
+   "head": "c7d3e9a1f204"
+  },
+  "data": {
+   "ok": true,
+   "status": "SEEDED",
+   "source": "synthetic"
+  },
+  "storage": {
+   "ok": true,
+   "backend": "local",
+   "status": "WRITABLE"
+  },
+  "ai": {
+   "ok": true,
+   "provider": "deterministic",
+   "model": "rule-based",
+   "is_llm": false,
+   "fallback_to_deterministic": true,
+   "outage_drill": "off",
+   "status": "RULE_BASED",
+   "reachability": "not probed (readiness never calls the model)"
+  }
+ },
+ "demo_controls_enabled": true
+}

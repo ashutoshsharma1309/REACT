@@ -1,0 +1,32 @@
+[project]
+name = "react-phase1"
+version = "0.1.0"
+description = "REACT - Real-time Event Analysis & Crisis Triage. Phase 1: synthetic business environment + deterministic intelligence foundation."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy>=2.0",
+    "psycopg[binary]>=3.2",
+    "pydantic>=2.8",
+    "pydantic-settings>=2.4",
+    "alembic>=1.13",
+    "python-dotenv>=1.0",
+    "boto3>=1.34",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+markers = [
+    "unit: no database or network (auto-applied)",
+    "integration: uses the PostgreSQL test database (auto-applied)",
+    "aws_live: calls real AWS; skipped unless REACT_AWS_LIVE=1",
+]
+
+[tool.setuptools]
+packages = ["app"]

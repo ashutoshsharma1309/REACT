@@ -1,0 +1,1561 @@
+{
+ "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+ "graph": {
+  "path": [
+   "subject",
+   "signal",
+   "evidence",
+   "hypothesis",
+   "conclusion"
+  ],
+  "edges": [
+   {
+    "to": "signal:supplier_late_share_recent",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:supplier_late_share_recent",
+    "from": "record:supplier_delivery:7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_share_recent",
+    "from": "record:supplier_delivery:46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_share_recent",
+    "from": "record:supplier_delivery:c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_share_recent",
+    "from": "record:supplier_delivery:88f32072-b67d-4fe0-a297-b1aa03d91889",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_share_recent",
+    "from": "record:supplier_delivery:7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_share_recent",
+    "from": "record:supplier_delivery:7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_share_recent",
+    "from": "record:supplier_delivery:b98cd639-ab93-437a-8a4d-dfd6122e9eca",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_share_recent",
+    "from": "record:supplier_delivery:52474fe9-89f2-4ca0-88d9-80cac0191ee3",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+    "from": "signal:supplier_late_share_recent",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:SUPPLIER_DELAY_SHORTAGE",
+    "from": "evidence:4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+    "type": "supports",
+    "weight": 3
+   },
+   {
+    "to": "signal:supplier_late_deliveries_6",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:supplier_late_deliveries_6",
+    "from": "record:supplier_delivery:7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_deliveries_6",
+    "from": "record:supplier_delivery:46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_deliveries_6",
+    "from": "record:supplier_delivery:c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_deliveries_6",
+    "from": "record:supplier_delivery:88f32072-b67d-4fe0-a297-b1aa03d91889",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_deliveries_6",
+    "from": "record:supplier_delivery:7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_late_deliveries_6",
+    "from": "record:supplier_delivery:7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:22376687-09c2-489e-9633-456f57d4532b",
+    "from": "signal:supplier_late_deliveries_6",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:SUPPLIER_DELAY_SHORTAGE",
+    "from": "evidence:22376687-09c2-489e-9633-456f57d4532b",
+    "type": "supports",
+    "weight": 2
+   },
+   {
+    "to": "signal:open_po_overdue",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:open_po_overdue",
+    "from": "record:purchase_order:877de30e-09ab-4cfd-9279-eab342dc86b9",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:34756a4b-331f-4f80-80b4-59fc93a7b32b",
+    "from": "signal:open_po_overdue",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:SUPPLIER_DELAY_SHORTAGE",
+    "from": "evidence:34756a4b-331f-4f80-80b4-59fc93a7b32b",
+    "type": "supports",
+    "weight": 2
+   },
+   {
+    "to": "signal:supplier_lead_change_days",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:supplier_lead_change_days",
+    "from": "record:supplier_delivery:7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_lead_change_days",
+    "from": "record:supplier_delivery:46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_lead_change_days",
+    "from": "record:supplier_delivery:c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_lead_change_days",
+    "from": "record:supplier_delivery:88f32072-b67d-4fe0-a297-b1aa03d91889",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_lead_change_days",
+    "from": "record:supplier_delivery:7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_lead_change_days",
+    "from": "record:supplier_delivery:7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_lead_change_days",
+    "from": "record:supplier_delivery:b98cd639-ab93-437a-8a4d-dfd6122e9eca",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:supplier_lead_change_days",
+    "from": "record:supplier_delivery:52474fe9-89f2-4ca0-88d9-80cac0191ee3",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:fa51d77a-a3a3-4ece-87e3-beecbe82f2ec",
+    "from": "signal:supplier_lead_change_days",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:SUPPLIER_DELAY_SHORTAGE",
+    "from": "evidence:fa51d77a-a3a3-4ece-87e3-beecbe82f2ec",
+    "type": "supports",
+    "weight": 1.5
+   },
+   {
+    "to": "signal:stockout_days_14",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:stockout_days_14",
+    "from": "record:inventory_snapshot:bf6ffd2b-6250-48eb-ad6a-ec6a13363e6a",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stockout_days_14",
+    "from": "record:inventory_snapshot:83b4334e-61e0-4c43-a468-ecc7807ffb49",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+    "from": "signal:stockout_days_14",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:SUPPLIER_DELAY_SHORTAGE",
+    "from": "evidence:5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+    "type": "supports",
+    "weight": 1
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:565d9e9b-b7ea-44b6-a6b3-505eeee51668",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:926479cc-cac1-4c88-9d5c-35d0de5aca6b",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:97ba52c9-222e-431d-b609-c8770523b896",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:b9be4f5e-984b-41bc-a773-505636a864fa",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:c4980690-945c-4ecb-a8fe-e90fad05572d",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:ca2e0daa-9a3c-4bd7-b9fe-eea9e7b5fd90",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:d9e4aad0-26eb-440b-b645-87ecbe6ce131",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:fe6bf67d-6b7f-48ea-953f-d449c448f890",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:demand_change_pct",
+    "from": "record:order_item:1ee2dd93-d7f1-489e-ab20-4285563d67a3",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:71300339-886c-422a-9b27-189ed8e9bf6a",
+    "from": "signal:demand_change_pct",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:DEMAND_SURGE",
+    "from": "evidence:71300339-886c-422a-9b27-189ed8e9bf6a",
+    "type": "supports",
+    "weight": 3
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:565d9e9b-b7ea-44b6-a6b3-505eeee51668",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:926479cc-cac1-4c88-9d5c-35d0de5aca6b",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:97ba52c9-222e-431d-b609-c8770523b896",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:b9be4f5e-984b-41bc-a773-505636a864fa",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:c4980690-945c-4ecb-a8fe-e90fad05572d",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:ca2e0daa-9a3c-4bd7-b9fe-eea9e7b5fd90",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:d9e4aad0-26eb-440b-b645-87ecbe6ce131",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:fe6bf67d-6b7f-48ea-953f-d449c448f890",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:distinct_customers_change_pct",
+    "from": "record:order_item:1ee2dd93-d7f1-489e-ab20-4285563d67a3",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:f4e8cdc4-74ef-4f9d-8c02-c69effacc69a",
+    "from": "signal:distinct_customers_change_pct",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:DEMAND_SURGE",
+    "from": "evidence:f4e8cdc4-74ef-4f9d-8c02-c69effacc69a",
+    "type": "supports",
+    "weight": 2
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:bf6ffd2b-6250-48eb-ad6a-ec6a13363e6a",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:83b4334e-61e0-4c43-a468-ecc7807ffb49",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:09bbbb6b-8429-4c84-b7eb-e78f58fb0bea",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:aad8678e-bd11-4a6c-9230-ea11649b815c",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:be517f8b-1d5f-45d2-b1a7-2d8a0ea5b127",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:21edbfca-ae6d-45ec-933f-28c21ce34bd2",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:3c1dfcdb-f908-46ac-a62b-d350d2336145",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:572712c9-fcbb-40b4-b990-ce415aed1b14",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:stock_change_pct",
+    "from": "record:inventory_snapshot:33ac345f-5ee4-4d25-974e-1150384fd408",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:1fa780db-59db-489a-90d2-5901ce3f640f",
+    "from": "signal:stock_change_pct",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:DEMAND_SURGE",
+    "from": "evidence:1fa780db-59db-489a-90d2-5901ce3f640f",
+    "type": "supports",
+    "weight": 1.5
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:bf6ffd2b-6250-48eb-ad6a-ec6a13363e6a",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:83b4334e-61e0-4c43-a468-ecc7807ffb49",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:09bbbb6b-8429-4c84-b7eb-e78f58fb0bea",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:aad8678e-bd11-4a6c-9230-ea11649b815c",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:be517f8b-1d5f-45d2-b1a7-2d8a0ea5b127",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:21edbfca-ae6d-45ec-933f-28c21ce34bd2",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:3c1dfcdb-f908-46ac-a62b-d350d2336145",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:572712c9-fcbb-40b4-b990-ce415aed1b14",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:days_of_cover",
+    "from": "record:inventory_snapshot:33ac345f-5ee4-4d25-974e-1150384fd408",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:04b07c83-6277-4e51-b053-365f6dd25f6f",
+    "from": "signal:days_of_cover",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:DEMAND_SURGE",
+    "from": "evidence:04b07c83-6277-4e51-b053-365f6dd25f6f",
+    "type": "supports",
+    "weight": 1
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:565d9e9b-b7ea-44b6-a6b3-505eeee51668",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:926479cc-cac1-4c88-9d5c-35d0de5aca6b",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:97ba52c9-222e-431d-b609-c8770523b896",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:b9be4f5e-984b-41bc-a773-505636a864fa",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:c4980690-945c-4ecb-a8fe-e90fad05572d",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:ca2e0daa-9a3c-4bd7-b9fe-eea9e7b5fd90",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:d9e4aad0-26eb-440b-b645-87ecbe6ce131",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:fe6bf67d-6b7f-48ea-953f-d449c448f890",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:top_customer_share",
+    "from": "record:order_item:1ee2dd93-d7f1-489e-ab20-4285563d67a3",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:1f4c12da-653e-4b8e-b7cf-1a46fecbfd64",
+    "from": "signal:top_customer_share",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:DEMAND_SURGE",
+    "from": "evidence:1f4c12da-653e-4b8e-b7cf-1a46fecbfd64",
+    "type": "supports",
+    "weight": 1
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:e1854363-152f-4217-b7e6-55d1c49d121c",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:2d946f02-6117-4f50-814a-e26ca18a5283",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:a0291fa7-33bd-4a4e-a1d5-e41e71586cbd",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:d7ceab5a-f77f-4297-af7d-132e78d04961",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:8b9f2895-a38a-457b-a3e0-4025e924fa62",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:42f23c0d-2b99-466c-a9b5-bcb1204ca92c",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:7d23e91e-180b-4fe4-b9db-de0a8ad081e3",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:d1e2fe4c-6353-415f-8192-82e22ce7632f",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:category_demand_change_pct",
+    "from": "record:order_item:fbcb05c7-f0bb-4a67-b3b4-61daaed258aa",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:1e8af98a-ab37-4508-8096-dcaa20a985bf",
+    "from": "signal:category_demand_change_pct",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:DEMAND_SURGE",
+    "from": "evidence:1e8af98a-ab37-4508-8096-dcaa20a985bf",
+    "type": "contradicts",
+    "weight": 0.3
+   },
+   {
+    "to": "signal:reorder_cover_ratio",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:reorder_cover_ratio",
+    "from": "record:inventory:95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:4abdbbf1-6d6a-490a-9f7f-0c9071656092",
+    "from": "signal:reorder_cover_ratio",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:REORDER_POLICY_GAP",
+    "from": "evidence:4abdbbf1-6d6a-490a-9f7f-0c9071656092",
+    "type": "supports",
+    "weight": 3
+   },
+   {
+    "to": "signal:no_open_po",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:no_open_po",
+    "from": "record:purchase_order:877de30e-09ab-4cfd-9279-eab342dc86b9",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:3f37d9fd-8aa1-42b5-b770-5d792249cc1d",
+    "from": "signal:no_open_po",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:REORDER_POLICY_GAP",
+    "from": "evidence:3f37d9fd-8aa1-42b5-b770-5d792249cc1d",
+    "type": "contradicts",
+    "weight": 1.2
+   },
+   {
+    "to": "evidence:6cde2e41-b795-43c0-b443-960dc146f4db",
+    "from": "signal:supplier_late_share_recent",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:REORDER_POLICY_GAP",
+    "from": "evidence:6cde2e41-b795-43c0-b443-960dc146f4db",
+    "type": "contradicts",
+    "weight": 0.6
+   },
+   {
+    "to": "evidence:4e3fd400-fada-4969-9a91-d258d2a3d2d6",
+    "from": "signal:demand_change_pct",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:REORDER_POLICY_GAP",
+    "from": "evidence:4e3fd400-fada-4969-9a91-d258d2a3d2d6",
+    "type": "contradicts",
+    "weight": 0.6
+   },
+   {
+    "to": "evidence:92257a99-9431-4bbe-8736-4c0604d0d1e1",
+    "from": "signal:open_po_overdue",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:REORDER_POLICY_GAP",
+    "from": "evidence:92257a99-9431-4bbe-8736-4c0604d0d1e1",
+    "type": "contradicts",
+    "weight": 2
+   },
+   {
+    "to": "signal:promotion_active",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:promotion_active",
+    "from": "record:discount:ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:fa6e3b89-bb9c-4abe-b3d7-95bfcc91678a",
+    "from": "signal:promotion_active",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:PROMOTION_DRIVEN_DEMAND",
+    "from": "evidence:fa6e3b89-bb9c-4abe-b3d7-95bfcc91678a",
+    "type": "contradicts",
+    "weight": 1.7999999999999998
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "type": "observed"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:565d9e9b-b7ea-44b6-a6b3-505eeee51668",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:926479cc-cac1-4c88-9d5c-35d0de5aca6b",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:97ba52c9-222e-431d-b609-c8770523b896",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:b9be4f5e-984b-41bc-a773-505636a864fa",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:c4980690-945c-4ecb-a8fe-e90fad05572d",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:ca2e0daa-9a3c-4bd7-b9fe-eea9e7b5fd90",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:d9e4aad0-26eb-440b-b645-87ecbe6ce131",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:fe6bf67d-6b7f-48ea-953f-d449c448f890",
+    "type": "derived_from"
+   },
+   {
+    "to": "signal:discount_rate_change_pts",
+    "from": "record:order_item:1ee2dd93-d7f1-489e-ab20-4285563d67a3",
+    "type": "derived_from"
+   },
+   {
+    "to": "evidence:b793d13b-ec8d-4a09-8611-30f8f7c513c7",
+    "from": "signal:discount_rate_change_pts",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:PROMOTION_DRIVEN_DEMAND",
+    "from": "evidence:b793d13b-ec8d-4a09-8611-30f8f7c513c7",
+    "type": "contradicts",
+    "weight": 1.2
+   },
+   {
+    "to": "evidence:a4d26ac6-718e-4c40-ac26-00032ec483a6",
+    "from": "signal:demand_change_pct",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:PROMOTION_DRIVEN_DEMAND",
+    "from": "evidence:a4d26ac6-718e-4c40-ac26-00032ec483a6",
+    "type": "supports",
+    "weight": 1
+   },
+   {
+    "to": "evidence:afa25526-4ae4-46f2-b828-55775010efcd",
+    "from": "signal:discount_rate_change_pts",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:PROMOTION_DRIVEN_DEMAND",
+    "from": "evidence:afa25526-4ae4-46f2-b828-55775010efcd",
+    "type": "contradicts",
+    "weight": 3
+   },
+   {
+    "to": "evidence:0893ebe7-1e94-437d-880d-50b58a2b7986",
+    "from": "signal:promotion_active",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:PROMOTION_DRIVEN_DEMAND",
+    "from": "evidence:0893ebe7-1e94-437d-880d-50b58a2b7986",
+    "type": "contradicts",
+    "weight": 1.5
+   },
+   {
+    "to": "evidence:61d2d67c-782b-4d82-86cf-552d5dedbc23",
+    "from": "signal:top_customer_share",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:BULK_ORDER_DEPLETION",
+    "from": "evidence:61d2d67c-782b-4d82-86cf-552d5dedbc23",
+    "type": "contradicts",
+    "weight": 1.7999999999999998
+   },
+   {
+    "to": "evidence:c5e26ba2-b06f-4afd-b55d-46eefa9f5936",
+    "from": "signal:distinct_customers_change_pct",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:BULK_ORDER_DEPLETION",
+    "from": "evidence:c5e26ba2-b06f-4afd-b55d-46eefa9f5936",
+    "type": "contradicts",
+    "weight": 0.8999999999999999
+   },
+   {
+    "to": "evidence:d9b6857f-437a-42ef-84ce-7d97351e7452",
+    "from": "signal:top_customer_share",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:BULK_ORDER_DEPLETION",
+    "from": "evidence:d9b6857f-437a-42ef-84ce-7d97351e7452",
+    "type": "contradicts",
+    "weight": 3
+   },
+   {
+    "to": "evidence:905bbb3b-756e-4e4b-8cbe-b2cb8b232dd6",
+    "from": "signal:distinct_customers_change_pct",
+    "type": "evidence"
+   },
+   {
+    "to": "hypothesis:BULK_ORDER_DEPLETION",
+    "from": "evidence:905bbb3b-756e-4e4b-8cbe-b2cb8b232dd6",
+    "type": "contradicts",
+    "weight": 1.5
+   },
+   {
+    "to": "conclusion",
+    "from": "hypothesis:SUPPLIER_DELAY_SHORTAGE",
+    "type": "concludes"
+   }
+  ],
+  "nodes": [
+   {
+    "id": "risk:390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+    "kind": "risk",
+    "label": "Wireless Speaker X may run out within a day"
+   },
+   {
+    "id": "hypothesis:SUPPLIER_DELAY_SHORTAGE",
+    "kind": "hypothesis",
+    "rank": 1,
+    "label": "Late deliveries left the shelf short",
+    "evidence_support_score": 1.0
+   },
+   {
+    "id": "signal:supplier_late_share_recent",
+    "kind": "signal",
+    "unit": "share",
+    "label": "supplier_late_share_recent",
+    "value": 0.5,
+    "source_type": "supplier_delivery",
+    "source_count": 8
+   },
+   {
+    "id": "evidence:4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+    "kind": "evidence",
+    "label": "SoundWave Wholesale: 50% of deliveries in the last 45 days were late (normal 13%)",
+    "supports": true,
+    "source_id": "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "source_type": "supplier_delivery",
+    "evidence_support_score": 0.859
+   },
+   {
+    "id": "signal:supplier_late_deliveries_6",
+    "kind": "signal",
+    "unit": "of 6",
+    "label": "supplier_late_deliveries_6",
+    "value": 3,
+    "source_type": "supplier_delivery",
+    "source_count": 6
+   },
+   {
+    "id": "evidence:22376687-09c2-489e-9633-456f57d4532b",
+    "kind": "evidence",
+    "label": "SoundWave Wholesale: 3 of the last 6 deliveries arrived late",
+    "supports": true,
+    "source_id": "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "source_type": "supplier_delivery",
+    "evidence_support_score": 0.757
+   },
+   {
+    "id": "signal:open_po_overdue",
+    "kind": "signal",
+    "unit": null,
+    "label": "open_po_overdue",
+    "value": true,
+    "source_type": "purchase_order",
+    "source_count": 1
+   },
+   {
+    "id": "evidence:34756a4b-331f-4f80-80b4-59fc93a7b32b",
+    "kind": "evidence",
+    "label": "1 open purchase order is overdue (by up to 1 day)",
+    "supports": true,
+    "source_id": "877de30e-09ab-4cfd-9279-eab342dc86b9",
+    "source_type": "purchase_order",
+    "evidence_support_score": 0.873
+   },
+   {
+    "id": "signal:supplier_lead_change_days",
+    "kind": "signal",
+    "unit": "days",
+    "label": "supplier_lead_change_days",
+    "value": 2.2,
+    "source_type": "supplier_delivery",
+    "source_count": 8
+   },
+   {
+    "id": "evidence:fa51d77a-a3a3-4ece-87e3-beecbe82f2ec",
+    "kind": "evidence",
+    "label": "SoundWave Wholesale: orders now take 8.2 days to arrive against a quoted 6 days",
+    "supports": true,
+    "source_id": "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "source_type": "supplier_delivery",
+    "evidence_support_score": 0.736
+   },
+   {
+    "id": "signal:stockout_days_14",
+    "kind": "signal",
+    "unit": "days",
+    "label": "stockout_days_14",
+    "value": 2,
+    "source_type": "inventory_snapshot",
+    "source_count": 2
+   },
+   {
+    "id": "evidence:5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+    "kind": "evidence",
+    "label": "Out of stock on 2 of the last 14 days",
+    "supports": true,
+    "source_id": "bf6ffd2b-6250-48eb-ad6a-ec6a13363e6a",
+    "source_type": "inventory_snapshot",
+    "evidence_support_score": 0.747
+   },
+   {
+    "id": "hypothesis:DEMAND_SURGE",
+    "kind": "hypothesis",
+    "rank": 2,
+    "label": "Demand jumped faster than stock was replenished",
+    "evidence_support_score": 0.9821
+   },
+   {
+    "id": "signal:demand_change_pct",
+    "kind": "signal",
+    "unit": "%",
+    "label": "demand_change_pct",
+    "value": 61.8,
+    "source_type": "order_item",
+    "source_count": 57
+   },
+   {
+    "id": "evidence:71300339-886c-422a-9b27-189ed8e9bf6a",
+    "kind": "evidence",
+    "label": "Demand changed +62% versus the previous 8 weeks (3.1 to 5.0 units a day)",
+    "supports": true,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.97
+   },
+   {
+    "id": "signal:distinct_customers_change_pct",
+    "kind": "signal",
+    "unit": "%",
+    "label": "distinct_customers_change_pct",
+    "value": 37.3,
+    "source_type": "order_item",
+    "source_count": 57
+   },
+   {
+    "id": "evidence:f4e8cdc4-74ef-4f9d-8c02-c69effacc69a",
+    "kind": "evidence",
+    "label": "57 different customers bought it in 14 days (normal about 42)",
+    "supports": true,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.853
+   },
+   {
+    "id": "signal:stock_change_pct",
+    "kind": "signal",
+    "unit": "%",
+    "label": "stock_change_pct",
+    "value": -96.5,
+    "source_type": "inventory_snapshot",
+    "source_count": 15
+   },
+   {
+    "id": "evidence:1fa780db-59db-489a-90d2-5901ce3f640f",
+    "kind": "evidence",
+    "label": "Stock on hand 1 units against a normal 29",
+    "supports": true,
+    "source_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "source_type": "inventory_snapshot",
+    "evidence_support_score": 0.785
+   },
+   {
+    "id": "signal:days_of_cover",
+    "kind": "signal",
+    "unit": "days",
+    "label": "days_of_cover",
+    "value": 0.2,
+    "source_type": "inventory_snapshot",
+    "source_count": 15
+   },
+   {
+    "id": "evidence:04b07c83-6277-4e51-b053-365f6dd25f6f",
+    "kind": "evidence",
+    "label": "1 units on hand cover about 0.2 days of sales",
+    "supports": true,
+    "source_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "source_type": "inventory_snapshot",
+    "evidence_support_score": 0.724
+   },
+   {
+    "id": "signal:top_customer_share",
+    "kind": "signal",
+    "unit": "share",
+    "label": "top_customer_share",
+    "value": 0.033,
+    "source_type": "order_item",
+    "source_count": 57
+   },
+   {
+    "id": "evidence:1f4c12da-653e-4b8e-b7cf-1a46fecbfd64",
+    "kind": "evidence",
+    "label": "The largest single customer bought 3% of recent units",
+    "supports": true,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.729
+   },
+   {
+    "id": "signal:category_demand_change_pct",
+    "kind": "signal",
+    "unit": "%",
+    "label": "category_demand_change_pct",
+    "value": 9.8,
+    "source_type": "order_item",
+    "source_count": 15
+   },
+   {
+    "id": "evidence:1e8af98a-ab37-4508-8096-dcaa20a985bf",
+    "kind": "evidence",
+    "label": "Condition not met: Wireless audio as a whole changed +10% over 28 days",
+    "supports": false,
+    "source_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "source_type": "order_item",
+    "evidence_support_score": 0.441
+   },
+   {
+    "id": "hypothesis:REORDER_POLICY_GAP",
+    "kind": "hypothesis",
+    "rank": 3,
+    "label": "The reorder level is too low",
+    "evidence_support_score": 0.3848
+   },
+   {
+    "id": "signal:reorder_cover_ratio",
+    "kind": "signal",
+    "unit": "ratio",
+    "label": "reorder_cover_ratio",
+    "value": 0.79,
+    "source_type": "inventory",
+    "source_count": 1
+   },
+   {
+    "id": "evidence:4abdbbf1-6d6a-490a-9f7f-0c9071656092",
+    "kind": "evidence",
+    "label": "Reorder level 46 units against about 58 needed to cover the current lead time (8 days) at today's demand",
+    "supports": true,
+    "source_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "source_type": "inventory",
+    "evidence_support_score": 0.643
+   },
+   {
+    "id": "signal:no_open_po",
+    "kind": "signal",
+    "unit": null,
+    "label": "no_open_po",
+    "value": false,
+    "source_type": "purchase_order",
+    "source_count": 1
+   },
+   {
+    "id": "evidence:3f37d9fd-8aa1-42b5-b770-5d792249cc1d",
+    "kind": "evidence",
+    "label": "Condition not met: 1 purchase order on the way (36 units)",
+    "supports": false,
+    "source_id": "877de30e-09ab-4cfd-9279-eab342dc86b9",
+    "source_type": "purchase_order",
+    "evidence_support_score": 0.644
+   },
+   {
+    "id": "evidence:6cde2e41-b795-43c0-b443-960dc146f4db",
+    "kind": "evidence",
+    "label": "Condition not met: SoundWave Wholesale: 50% of deliveries in the last 45 days were late (normal 13%)",
+    "supports": false,
+    "source_id": "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "source_type": "supplier_delivery",
+    "evidence_support_score": 0.602
+   },
+   {
+    "id": "evidence:4e3fd400-fada-4969-9a91-d258d2a3d2d6",
+    "kind": "evidence",
+    "label": "Condition not met: Demand changed +62% versus the previous 8 weeks (3.1 to 5.0 units a day)",
+    "supports": false,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.602
+   },
+   {
+    "id": "evidence:92257a99-9431-4bbe-8736-4c0604d0d1e1",
+    "kind": "evidence",
+    "label": "1 open purchase order is overdue (by up to 1 day)",
+    "supports": false,
+    "source_id": "877de30e-09ab-4cfd-9279-eab342dc86b9",
+    "source_type": "purchase_order",
+    "evidence_support_score": 0.794
+   },
+   {
+    "id": "hypothesis:PROMOTION_DRIVEN_DEMAND",
+    "kind": "hypothesis",
+    "rank": 4,
+    "label": "A promotion pulled demand forward",
+    "evidence_support_score": 0.0834
+   },
+   {
+    "id": "signal:promotion_active",
+    "kind": "signal",
+    "unit": null,
+    "label": "promotion_active",
+    "value": false,
+    "source_type": "discount",
+    "source_count": 1
+   },
+   {
+    "id": "evidence:fa6e3b89-bb9c-4abe-b3d7-95bfcc91678a",
+    "kind": "evidence",
+    "label": "Condition not met: No promotion was running on this product",
+    "supports": false,
+    "source_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "source_type": "discount",
+    "evidence_support_score": 0.72
+   },
+   {
+    "id": "signal:discount_rate_change_pts",
+    "kind": "signal",
+    "unit": "points",
+    "label": "discount_rate_change_pts",
+    "value": 0.28,
+    "source_type": "order_item",
+    "source_count": 57
+   },
+   {
+    "id": "evidence:b793d13b-ec8d-4a09-8611-30f8f7c513c7",
+    "kind": "evidence",
+    "label": "Condition not met: Discount averaged 0.9% of the shelf price (normal 0.6%)",
+    "supports": false,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.688
+   },
+   {
+    "id": "evidence:a4d26ac6-718e-4c40-ac26-00032ec483a6",
+    "kind": "evidence",
+    "label": "Demand changed +62% versus the previous 8 weeks (3.1 to 5.0 units a day)",
+    "supports": true,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.549
+   },
+   {
+    "id": "evidence:afa25526-4ae4-46f2-b828-55775010efcd",
+    "kind": "evidence",
+    "label": "Discount averaged 0.9% of the shelf price (normal 0.6%)",
+    "supports": false,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.921
+   },
+   {
+    "id": "evidence:0893ebe7-1e94-437d-880d-50b58a2b7986",
+    "kind": "evidence",
+    "label": "No promotion was running on this product",
+    "supports": false,
+    "source_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "source_type": "discount",
+    "evidence_support_score": 0.769
+   },
+   {
+    "id": "hypothesis:BULK_ORDER_DEPLETION",
+    "kind": "hypothesis",
+    "rank": 5,
+    "label": "One large order drained the stock",
+    "evidence_support_score": 0.0
+   },
+   {
+    "id": "evidence:61d2d67c-782b-4d82-86cf-552d5dedbc23",
+    "kind": "evidence",
+    "label": "Condition not met: The largest single customer bought 3% of recent units",
+    "supports": false,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.766
+   },
+   {
+    "id": "evidence:c5e26ba2-b06f-4afd-b55d-46eefa9f5936",
+    "kind": "evidence",
+    "label": "Condition not met: 57 different customers bought it in 14 days (normal about 42)",
+    "supports": false,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.703
+   },
+   {
+    "id": "evidence:d9b6857f-437a-42ef-84ce-7d97351e7452",
+    "kind": "evidence",
+    "label": "The largest single customer bought 3% of recent units",
+    "supports": false,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.961
+   },
+   {
+    "id": "evidence:905bbb3b-756e-4e4b-8cbe-b2cb8b232dd6",
+    "kind": "evidence",
+    "label": "57 different customers bought it in 14 days (normal about 42)",
+    "supports": false,
+    "source_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item",
+    "evidence_support_score": 0.815
+   },
+   {
+    "id": "conclusion",
+    "kind": "conclusion",
+    "label": "The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98).",
+    "determined": true,
+    "evidence_support_score": 1.0
+   },
+   {
+    "id": "record:discount:ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "kind": "record",
+    "label": "discount ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "record_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "source_type": "discount"
+   },
+   {
+    "id": "record:inventory:95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "kind": "record",
+    "label": "inventory 95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "record_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "source_type": "inventory"
+   },
+   {
+    "id": "record:inventory_snapshot:09bbbb6b-8429-4c84-b7eb-e78f58fb0bea",
+    "kind": "record",
+    "label": "inventory_snapshot 09bbbb6b-8429-4c84-b7eb-e78f58fb0bea",
+    "record_id": "09bbbb6b-8429-4c84-b7eb-e78f58fb0bea",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:inventory_snapshot:21edbfca-ae6d-45ec-933f-28c21ce34bd2",
+    "kind": "record",
+    "label": "inventory_snapshot 21edbfca-ae6d-45ec-933f-28c21ce34bd2",
+    "record_id": "21edbfca-ae6d-45ec-933f-28c21ce34bd2",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:inventory_snapshot:33ac345f-5ee4-4d25-974e-1150384fd408",
+    "kind": "record",
+    "label": "inventory_snapshot 33ac345f-5ee4-4d25-974e-1150384fd408",
+    "record_id": "33ac345f-5ee4-4d25-974e-1150384fd408",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:inventory_snapshot:3c1dfcdb-f908-46ac-a62b-d350d2336145",
+    "kind": "record",
+    "label": "inventory_snapshot 3c1dfcdb-f908-46ac-a62b-d350d2336145",
+    "record_id": "3c1dfcdb-f908-46ac-a62b-d350d2336145",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:inventory_snapshot:572712c9-fcbb-40b4-b990-ce415aed1b14",
+    "kind": "record",
+    "label": "inventory_snapshot 572712c9-fcbb-40b4-b990-ce415aed1b14",
+    "record_id": "572712c9-fcbb-40b4-b990-ce415aed1b14",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:inventory_snapshot:83b4334e-61e0-4c43-a468-ecc7807ffb49",
+    "kind": "record",
+    "label": "inventory_snapshot 83b4334e-61e0-4c43-a468-ecc7807ffb49",
+    "record_id": "83b4334e-61e0-4c43-a468-ecc7807ffb49",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:inventory_snapshot:95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "kind": "record",
+    "label": "inventory_snapshot 95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "record_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:inventory_snapshot:aad8678e-bd11-4a6c-9230-ea11649b815c",
+    "kind": "record",
+    "label": "inventory_snapshot aad8678e-bd11-4a6c-9230-ea11649b815c",
+    "record_id": "aad8678e-bd11-4a6c-9230-ea11649b815c",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:inventory_snapshot:be517f8b-1d5f-45d2-b1a7-2d8a0ea5b127",
+    "kind": "record",
+    "label": "inventory_snapshot be517f8b-1d5f-45d2-b1a7-2d8a0ea5b127",
+    "record_id": "be517f8b-1d5f-45d2-b1a7-2d8a0ea5b127",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:inventory_snapshot:bf6ffd2b-6250-48eb-ad6a-ec6a13363e6a",
+    "kind": "record",
+    "label": "inventory_snapshot bf6ffd2b-6250-48eb-ad6a-ec6a13363e6a",
+    "record_id": "bf6ffd2b-6250-48eb-ad6a-ec6a13363e6a",
+    "source_type": "inventory_snapshot"
+   },
+   {
+    "id": "record:order_item:1ee2dd93-d7f1-489e-ab20-4285563d67a3",
+    "kind": "record",
+    "label": "order_item 1ee2dd93-d7f1-489e-ab20-4285563d67a3",
+    "record_id": "1ee2dd93-d7f1-489e-ab20-4285563d67a3",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:2d946f02-6117-4f50-814a-e26ca18a5283",
+    "kind": "record",
+    "label": "order_item 2d946f02-6117-4f50-814a-e26ca18a5283",
+    "record_id": "2d946f02-6117-4f50-814a-e26ca18a5283",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "kind": "record",
+    "label": "order_item 3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "record_id": "3d2ec939-23a3-4bae-abb2-69d29c3571e2",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:42f23c0d-2b99-466c-a9b5-bcb1204ca92c",
+    "kind": "record",
+    "label": "order_item 42f23c0d-2b99-466c-a9b5-bcb1204ca92c",
+    "record_id": "42f23c0d-2b99-466c-a9b5-bcb1204ca92c",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:565d9e9b-b7ea-44b6-a6b3-505eeee51668",
+    "kind": "record",
+    "label": "order_item 565d9e9b-b7ea-44b6-a6b3-505eeee51668",
+    "record_id": "565d9e9b-b7ea-44b6-a6b3-505eeee51668",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:7d23e91e-180b-4fe4-b9db-de0a8ad081e3",
+    "kind": "record",
+    "label": "order_item 7d23e91e-180b-4fe4-b9db-de0a8ad081e3",
+    "record_id": "7d23e91e-180b-4fe4-b9db-de0a8ad081e3",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:8b9f2895-a38a-457b-a3e0-4025e924fa62",
+    "kind": "record",
+    "label": "order_item 8b9f2895-a38a-457b-a3e0-4025e924fa62",
+    "record_id": "8b9f2895-a38a-457b-a3e0-4025e924fa62",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:926479cc-cac1-4c88-9d5c-35d0de5aca6b",
+    "kind": "record",
+    "label": "order_item 926479cc-cac1-4c88-9d5c-35d0de5aca6b",
+    "record_id": "926479cc-cac1-4c88-9d5c-35d0de5aca6b",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:97ba52c9-222e-431d-b609-c8770523b896",
+    "kind": "record",
+    "label": "order_item 97ba52c9-222e-431d-b609-c8770523b896",
+    "record_id": "97ba52c9-222e-431d-b609-c8770523b896",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:a0291fa7-33bd-4a4e-a1d5-e41e71586cbd",
+    "kind": "record",
+    "label": "order_item a0291fa7-33bd-4a4e-a1d5-e41e71586cbd",
+    "record_id": "a0291fa7-33bd-4a4e-a1d5-e41e71586cbd",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:b9be4f5e-984b-41bc-a773-505636a864fa",
+    "kind": "record",
+    "label": "order_item b9be4f5e-984b-41bc-a773-505636a864fa",
+    "record_id": "b9be4f5e-984b-41bc-a773-505636a864fa",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:c4980690-945c-4ecb-a8fe-e90fad05572d",
+    "kind": "record",
+    "label": "order_item c4980690-945c-4ecb-a8fe-e90fad05572d",
+    "record_id": "c4980690-945c-4ecb-a8fe-e90fad05572d",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:ca2e0daa-9a3c-4bd7-b9fe-eea9e7b5fd90",
+    "kind": "record",
+    "label": "order_item ca2e0daa-9a3c-4bd7-b9fe-eea9e7b5fd90",
+    "record_id": "ca2e0daa-9a3c-4bd7-b9fe-eea9e7b5fd90",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:d1e2fe4c-6353-415f-8192-82e22ce7632f",
+    "kind": "record",
+    "label": "order_item d1e2fe4c-6353-415f-8192-82e22ce7632f",
+    "record_id": "d1e2fe4c-6353-415f-8192-82e22ce7632f",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:d7ceab5a-f77f-4297-af7d-132e78d04961",
+    "kind": "record",
+    "label": "order_item d7ceab5a-f77f-4297-af7d-132e78d04961",
+    "record_id": "d7ceab5a-f77f-4297-af7d-132e78d04961",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:d9e4aad0-26eb-440b-b645-87ecbe6ce131",
+    "kind": "record",
+    "label": "order_item d9e4aad0-26eb-440b-b645-87ecbe6ce131",
+    "record_id": "d9e4aad0-26eb-440b-b645-87ecbe6ce131",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:e1854363-152f-4217-b7e6-55d1c49d121c",
+    "kind": "record",
+    "label": "order_item e1854363-152f-4217-b7e6-55d1c49d121c",
+    "record_id": "e1854363-152f-4217-b7e6-55d1c49d121c",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "kind": "record",
+    "label": "order_item ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "record_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:fbcb05c7-f0bb-4a67-b3b4-61daaed258aa",
+    "kind": "record",
+    "label": "order_item fbcb05c7-f0bb-4a67-b3b4-61daaed258aa",
+    "record_id": "fbcb05c7-f0bb-4a67-b3b4-61daaed258aa",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:order_item:fe6bf67d-6b7f-48ea-953f-d449c448f890",
+    "kind": "record",
+    "label": "order_item fe6bf67d-6b7f-48ea-953f-d449c448f890",
+    "record_id": "fe6bf67d-6b7f-48ea-953f-d449c448f890",
+    "source_type": "order_item"
+   },
+   {
+    "id": "record:purchase_order:877de30e-09ab-4cfd-9279-eab342dc86b9",
+    "kind": "record",
+    "label": "purchase_order 877de30e-09ab-4cfd-9279-eab342dc86b9",
+    "record_id": "877de30e-09ab-4cfd-9279-eab342dc86b9",
+    "source_type": "purchase_order"
+   },
+   {
+    "id": "record:supplier_delivery:46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+    "kind": "record",
+    "label": "supplier_delivery 46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+    "record_id": "46eeac6a-50e2-4dda-a030-0db0d14bc6f5",
+    "source_type": "supplier_delivery"
+   },
+   {
+    "id": "record:supplier_delivery:52474fe9-89f2-4ca0-88d9-80cac0191ee3",
+    "kind": "record",
+    "label": "supplier_delivery 52474fe9-89f2-4ca0-88d9-80cac0191ee3",
+    "record_id": "52474fe9-89f2-4ca0-88d9-80cac0191ee3",
+    "source_type": "supplier_delivery"
+   },
+   {
+    "id": "record:supplier_delivery:7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+    "kind": "record",
+    "label": "supplier_delivery 7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+    "record_id": "7068b1c6-f4e9-40db-bf93-438bd4c092a1",
+    "source_type": "supplier_delivery"
+   },
+   {
+    "id": "record:supplier_delivery:7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "kind": "record",
+    "label": "supplier_delivery 7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "record_id": "7c11ab20-5d88-4b3b-9585-2ab858d0ae30",
+    "source_type": "supplier_delivery"
+   },
+   {
+    "id": "record:supplier_delivery:7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+    "kind": "record",
+    "label": "supplier_delivery 7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+    "record_id": "7c86fe7f-cf16-44a5-9ba4-ba0d6f621c8d",
+    "source_type": "supplier_delivery"
+   },
+   {
+    "id": "record:supplier_delivery:88f32072-b67d-4fe0-a297-b1aa03d91889",
+    "kind": "record",
+    "label": "supplier_delivery 88f32072-b67d-4fe0-a297-b1aa03d91889",
+    "record_id": "88f32072-b67d-4fe0-a297-b1aa03d91889",
+    "source_type": "supplier_delivery"
+   },
+   {
+    "id": "record:supplier_delivery:b98cd639-ab93-437a-8a4d-dfd6122e9eca",
+    "kind": "record",
+    "label": "supplier_delivery b98cd639-ab93-437a-8a4d-dfd6122e9eca",
+    "record_id": "b98cd639-ab93-437a-8a4d-dfd6122e9eca",
+    "source_type": "supplier_delivery"
+   },
+   {
+    "id": "record:supplier_delivery:c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+    "kind": "record",
+    "label": "supplier_delivery c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+    "record_id": "c269a98d-6d48-4507-bc7f-8d93c1e5c926",
+    "source_type": "supplier_delivery"
+   }
+  ],
+  "counts": {
+   "records": 41,
+   "signals": 15,
+   "evidence": 25,
+   "hypotheses": 5
+  }
+ }
+}

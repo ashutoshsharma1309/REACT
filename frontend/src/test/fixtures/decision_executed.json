@@ -1,0 +1,377 @@
+{
+ "decision_id": "02515578-1f25-4fb8-9fb8-438c7ce281d9",
+ "agent_run_id": "902e03e3-4944-412c-91c6-c984a28c7d5b",
+ "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+ "subject_type": "RISK",
+ "incident_id": null,
+ "opportunity_id": null,
+ "risk_id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+ "status": "EXECUTED",
+ "decision_readiness": "READY",
+ "action_type": "REORDER_PRODUCT",
+ "target_type": "product",
+ "target_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+ "target_name": "Wireless Speaker X",
+ "priority": "P1",
+ "summary": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+ "recommendation": "Reorder product: Create a purchase order to restock a product before it runs out. Target: Wireless Speaker X.",
+ "hypothesis_type": "SUPPLIER_DELAY_SHORTAGE",
+ "hypothesis_label": "Late deliveries left the shelf short",
+ "evidence_support_score": 1.0,
+ "requires_human_approval": true,
+ "provider": "deterministic",
+ "llm_used": false,
+ "fallback_used": false,
+ "error": null,
+ "created_at": "2026-10-03T06:27:32.193597",
+ "updated_at": "2026-10-03T06:27:32.397987",
+ "problem_statement": "STOCKOUT_RISK (CRITICAL): Wireless Speaker X may run out within a day. Conclusion: The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98).",
+ "rationale": "SUPPLIER_DELAY_SHORTAGE is strongly supported by the available records (Evidence Support Score 1.00; evidence 34756a4b-331f-4f80-80b4-59fc93a7b32b, 4efe8e94-6630-42fe-ba2d-3efcc20485a7, 22376687-09c2-489e-9633-456f57d4532b, 5d6ba2ee-3739-4931-89e9-12291e5b24ba, fa51d77a-a3a3-4ece-87e3-beecbe82f2ec). 1 open purchase order is overdue (by up to 1 day) SoundWave Wholesale: 50% of deliveries in the last 45 days were late (normal 13%) SoundWave Wholesale: 3 of the last 6 deliveries arrived late Out of stock on 2 of the last 14 days The deterministic impact estimate attached to this decision quantifies the exposure; the recommended action is the catalogue default for this conclusion.",
+ "required_actions": [
+  "Simulated purchase order created for the supplier."
+ ],
+ "alternatives": [
+  {
+   "summary": "Monitor",
+   "tradeoff": "Put the product or supplier on a watchlist with alert thresholds.",
+   "action_type": "MONITOR_PRODUCT"
+  },
+  {
+   "summary": "Review demand",
+   "tradeoff": "Open a demand review for a product, a category or the whole business before changing stock plans.",
+   "action_type": "REVIEW_DEMAND"
+  }
+ ],
+ "risks": [
+  "Cash is tied up in the new stock until it sells.",
+  "The supplier may still deliver late."
+ ],
+ "assumptions": [
+  "Demand stays near today's level for the next few weeks.",
+  "All figures are synthetic estimates from the deterministic impact engine."
+ ],
+ "evidence_ids": [
+  "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+  "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+  "22376687-09c2-489e-9633-456f57d4532b",
+  "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+  "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+ ],
+ "contradicting_evidence_ids": [],
+ "hypothesis_id": "ca65903e-827d-49a8-99dd-c17b3df672c9",
+ "expected_impact": {
+  "scope": {
+   "region": null,
+   "category": "Wireless audio",
+   "product_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+   "entity_name": "Wireless Speaker X",
+   "supplier_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b",
+   "inventory_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+   "subject_type": "STOCKOUT_RISK"
+  },
+  "domain": "merchant",
+  "inputs": {
+   "unit_price": 2477.82,
+   "unit_margin": 678.82,
+   "demand_basis": "last 14 days (in-stock days)",
+   "days_of_cover": 0.2,
+   "units_per_day": 5.0,
+   "next_stock_basis": "open purchase order PO-260925-SOUN-S1-0222, expected 2026-10-01 and now overdue",
+   "days_until_next_stock": 3.3
+  },
+  "source": "app/impact/engine.py via investigation.impact",
+  "wording": "Estimated impact: synthetic, formula-based estimate from the merchant's records; not a guaranteed outcome.",
+  "currency": "INR",
+  "lost_sales": {
+   "unit": "INR",
+   "basis": "SYNTHETIC",
+   "value": 38819.21,
+   "inputs": {
+    "unit_price": 2477.82,
+    "unit_margin": 678.82,
+    "units_per_day": 5.0,
+    "days_without_stock": 3.1
+   },
+   "formula": "lost_sales = units_per_day * days_without_stock * unit_price; lost_margin = lost_units * unit_margin",
+   "currency": "INR",
+   "components": {
+    "lost_units": 15.67,
+    "lost_margin": 10634.87
+   },
+   "description": "About 16 units of sales lost over 3.1 days without stock",
+   "is_estimate": true
+  },
+  "reorder_cost": {
+   "unit": "INR",
+   "basis": "SYNTHETIC",
+   "value": 169106.0,
+   "inputs": {
+    "quantity": 94.0,
+    "unit_cost": 1799.0
+   },
+   "formula": "purchase_value = quantity * unit_cost",
+   "currency": "INR",
+   "components": {},
+   "description": "Cost of the suggested reorder (94 units)",
+   "is_estimate": true
+  },
+  "total_includes": [
+   "lost_sales"
+  ],
+  "estimated_total": 38819.21,
+  "impact_reference": {
+   "basis": "SYNTHETIC",
+   "source": "app/impact/engine.py via investigation.impact",
+   "currency": "INR",
+   "components": {
+    "lost_sales": 38819.21,
+    "reorder_cost": 169106.0
+   },
+   "is_estimate": true,
+   "estimated_total": 38819.21,
+   "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf"
+  },
+  "reorder_suggestion": {
+   "formula": "quantity = ceil(units_per_day x (lead_days + cover_days + 3 safety days) - on_hand - on_order)",
+   "on_hand": 1,
+   "on_order": 36,
+   "quantity": 94,
+   "supplier": "SoundWave Wholesale",
+   "lead_days": 9.2,
+   "unit_cost": 1799.0,
+   "cover_days": 14,
+   "supplier_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b",
+   "demand_basis": "last 14 days (in-stock days)",
+   "units_per_day": 5.0
+  },
+  "operational_constraints": [
+   {
+    "type": "supplier_lead_time",
+    "detail": "SoundWave Wholesale currently takes about 9 days to deliver against a quoted 6 days",
+    "signal": "supplier_lead_change_days"
+   }
+  ]
+ },
+ "validation": {
+  "checks": [
+   {
+    "check": "target",
+    "detail": "product:ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "passed": true
+   },
+   {
+    "check": "reason",
+    "passed": true
+   },
+   {
+    "check": "evidence",
+    "detail": "5 supporting / 0 contradicting evidence ids, all present in investigation 854c4c57-b0cc-4863-a8fe-abefb21908bf",
+    "passed": true
+   },
+   {
+    "check": "expected_impact",
+    "detail": "copied from the deterministic impact engine (investigation.impact)",
+    "passed": true
+   },
+   {
+    "check": "proposed_action",
+    "detail": "REORDER_PRODUCT",
+    "passed": true
+   },
+   {
+    "check": "risks_assumptions",
+    "detail": "2 risks, 2 assumptions",
+    "passed": true
+   },
+   {
+    "check": "human_approval_required",
+    "passed": true
+   },
+   {
+    "check": "evidence_support_score_restated",
+    "detail": 1.0,
+    "passed": true
+   },
+   {
+    "check": "readiness",
+    "detail": "READY",
+    "passed": true
+   }
+  ],
+  "passed": true
+ },
+ "timeline": [
+  {
+   "at": "2026-10-03T06:27:32.196192",
+   "actor": "decision_agent",
+   "event": "decision_created",
+   "status": "DECISION_READY",
+   "readiness": "READY",
+   "action_type": "REORDER_PRODUCT"
+  },
+  {
+   "at": "2026-10-03T06:27:32.197793",
+   "actor": "decision_engine",
+   "event": "status_changed",
+   "to_status": "AWAITING_APPROVAL",
+   "from_status": "DECISION_READY"
+  },
+  {
+   "at": "2026-10-03T06:27:32.293867",
+   "actor": "decision_engine",
+   "event": "approval_requested",
+   "action_id": "9a0060a5-86dd-4d81-9254-0470bc6fe829",
+   "approval_id": "7ed28bbd-2d7f-4ec6-a3e0-1a2b78a8bfd1"
+  },
+  {
+   "at": "2026-10-03T06:27:32.369003",
+   "actor": "Store owner",
+   "event": "status_changed",
+   "to_status": "APPROVED",
+   "approval_id": "7ed28bbd-2d7f-4ec6-a3e0-1a2b78a8bfd1",
+   "from_status": "AWAITING_APPROVAL"
+  },
+  {
+   "at": "2026-10-03T06:27:32.388957",
+   "actor": "Store owner",
+   "event": "status_changed",
+   "to_status": "EXECUTING",
+   "from_status": "APPROVED"
+  },
+  {
+   "at": "2026-10-03T06:27:32.393645",
+   "actor": "Store owner",
+   "event": "status_changed",
+   "task_id": "SIM-PO-0A0767E0",
+   "action_id": "9a0060a5-86dd-4d81-9254-0470bc6fe829",
+   "to_status": "EXECUTED",
+   "from_status": "EXECUTING"
+  }
+ ],
+ "approvals": [
+  {
+   "approval_id": "7ed28bbd-2d7f-4ec6-a3e0-1a2b78a8bfd1",
+   "decision_id": "02515578-1f25-4fb8-9fb8-438c7ce281d9",
+   "status": "APPROVED",
+   "requested_at": "2026-10-03T06:27:32.292478",
+   "reviewed_at": "2026-10-03T06:27:32.368957",
+   "reviewed_by": "Store owner",
+   "reason": null,
+   "approval_metadata": {
+    "reason": "REACT never executes without an explicit human approval",
+    "required": true
+   }
+  }
+ ],
+ "actions": [
+  {
+   "action_id": "9a0060a5-86dd-4d81-9254-0470bc6fe829",
+   "decision_id": "02515578-1f25-4fb8-9fb8-438c7ce281d9",
+   "approval_id": "7ed28bbd-2d7f-4ec6-a3e0-1a2b78a8bfd1",
+   "action_type": "REORDER_PRODUCT",
+   "target_type": "product",
+   "target_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+   "target_name": "Wireless Speaker X",
+   "status": "COMPLETED",
+   "parameters": {
+    "basis": {
+     "formula": "quantity = ceil(units_per_day x (lead_days + cover_days + 3 safety days) - on_hand - on_order)",
+     "on_hand": 1,
+     "on_order": 36,
+     "quantity": 94,
+     "supplier": "SoundWave Wholesale",
+     "lead_days": 9.2,
+     "unit_cost": 1799.0,
+     "cover_days": 14,
+     "supplier_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b",
+     "demand_basis": "last 14 days (in-stock days)",
+     "units_per_day": 5.0
+    },
+    "store": "Astra Retail, Jayanagar",
+    "source": "deterministic action parameters (app/domains/merchant/actions.py)",
+    "priority": "P1",
+    "quantity": 94,
+    "supplier": "SoundWave Wholesale",
+    "unit_cost": 1799.0,
+    "supplier_id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b",
+    "inventory_id": "95934bbc-38c9-4928-bb08-b9c5f30acdf0",
+    "estimated_cost": 169106.0,
+    "expected_in_days": 9,
+    "required_actions": [
+     "Simulated purchase order created for the supplier."
+    ],
+    "estimated_cost_formula": "purchase_value = quantity * unit_cost",
+    "expected_delivery_date": "2026-10-11",
+    "computed_at_business_date": "2026-10-02"
+   },
+   "simulated": true,
+   "result": {
+    "items": [
+     {
+      "product": "Wireless Speaker X",
+      "quantity": 94,
+      "unit_cost": 1799.0
+     }
+    ],
+    "notes": "Simulated purchase order created. Nothing was sent to the supplier and stock levels are unchanged.",
+    "store": "Astra Retail, Jayanagar",
+    "status": "OPEN",
+    "target": {
+     "id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+     "name": "Wireless Speaker X",
+     "type": "product"
+    },
+    "task_id": "SIM-PO-0A0767E0",
+    "supplier": "SoundWave Wholesale",
+    "simulated": true,
+    "task_type": "purchase_order",
+    "action_type": "REORDER_PRODUCT",
+    "approval_id": "7ed28bbd-2d7f-4ec6-a3e0-1a2b78a8bfd1",
+    "decision_id": "02515578-1f25-4fb8-9fb8-438c7ce281d9",
+    "executed_at": "2026-10-03T06:27:32.393524",
+    "executed_by": "Store owner",
+    "evidence_ids": [
+     "34756a4b-331f-4f80-80b4-59fc93a7b32b",
+     "4efe8e94-6630-42fe-ba2d-3efcc20485a7",
+     "22376687-09c2-489e-9633-456f57d4532b",
+     "5d6ba2ee-3739-4931-89e9-12291e5b24ba",
+     "fa51d77a-a3a3-4ece-87e3-beecbe82f2ec"
+    ],
+    "side_effects": "none",
+    "business_date": "2026-10-02",
+    "estimated_cost": 169106.0,
+    "hypothesis_type": "SUPPLIER_DELAY_SHORTAGE",
+    "catalogue_outcome": "Simulated purchase order created for the supplier.",
+    "expected_delivery_date": "2026-10-11",
+    "business_records_modified": false
+   },
+   "executed_by": "Store owner",
+   "started_at": "2026-10-03T06:27:32.388976",
+   "completed_at": "2026-10-03T06:27:32.393627",
+   "error": null,
+   "transitions": [
+    {
+     "at": "2026-10-03T06:27:32.288058",
+     "by": "decision_engine",
+     "to": "PROPOSED"
+    },
+    {
+     "at": "2026-10-03T06:27:32.368983",
+     "by": "Store owner",
+     "to": "APPROVED"
+    },
+    {
+     "at": "2026-10-03T06:27:32.388972",
+     "by": "Store owner",
+     "to": "EXECUTING"
+    },
+    {
+     "at": "2026-10-03T06:27:32.393632",
+     "by": "Store owner",
+     "to": "COMPLETED"
+    }
+   ]
+  }
+ ],
+ "terminology": "evidence_support_score is the deterministic Evidence Support Score (not a probability); decision_readiness is a separate rule-based readiness state; expected_impact is copied from the deterministic impact engine."
+}

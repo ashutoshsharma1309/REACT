@@ -1,0 +1,353 @@
+{
+ "company": {
+  "name": "Astra Retail",
+  "industry": "Retail",
+  "currency": "INR"
+ },
+ "as_of": "2026-10-02T07:00:00",
+ "data_source": "Synthetic dataset (fictional business)",
+ "scanned": true,
+ "business_status": "NEEDS_ATTENTION",
+ "headline": "2 open issues",
+ "counts": {
+  "critical": 0,
+  "high": 1,
+  "other": 1,
+  "addressed": 1,
+  "opportunities": 0,
+  "pending_decisions": 0
+ },
+ "attention": [
+  {
+   "kind": "risk",
+   "id": "33110267-e09e-47f5-9127-088636d682ad",
+   "type": "SUPPLIER_DELAY",
+   "title": "1 order from SoundWave Wholesale is overdue",
+   "description": "The oldest is 4 days past its expected date. 4 products you sell depend on this supplier.",
+   "status": "OPEN",
+   "detected_at": "2026-10-02T07:00:00",
+   "severity": "HIGH",
+   "confidence": null,
+   "entity": {
+    "type": "supplier",
+    "id": "30a313bc-398d-4aa8-9dc6-b37baefc3a5b",
+    "name": "SoundWave Wholesale",
+    "code": null
+   },
+   "location": null,
+   "impact": {
+    "value": 38819.21,
+    "currency": "INR",
+    "description": "16 units of sales at risk across 1 dependent products",
+    "formula": "exposure = sum over dependent products (units_per_day * days_out_of_stock_during_delay * unit_price)",
+    "basis": "SYNTHETIC"
+   },
+   "evidence_count": 11,
+   "stage": "DETECTED",
+   "investigation": null,
+   "agent_run": null,
+   "decision": null,
+   "signal": null,
+   "supporting_metrics": {
+    "late_deliveries": 3,
+    "products_at_risk": 1,
+    "quoted_lead_days": 6,
+    "average_delay_days": 4.3,
+    "dependent_products": 4,
+    "observed_lead_days": 9.2,
+    "deliveries_considered": 6,
+    "overdue_purchase_orders": 1
+   }
+  },
+  {
+   "kind": "risk",
+   "id": "8f582ada-951a-40c5-9561-ceabe74144b1",
+   "type": "STOCKOUT_RISK",
+   "title": "Voltix 33W Fast Charger Black is out of stock",
+   "description": "Out of stock and normally selling about 0.5 a day. The next stock from PowerHub India is about 2 days away (open purchase order PO-260929-POWE-S1-0226, expected 2026-10-04), so the shelf could be empty for 2.0 days.",
+   "status": "OPEN",
+   "detected_at": "2026-10-02T07:00:00",
+   "severity": "LOW",
+   "confidence": null,
+   "entity": {
+    "type": "product",
+    "id": "a9ec0cc3-2625-47b2-83a9-86f22e839d27",
+    "name": "Voltix 33W Fast Charger Black",
+    "code": "C33-02"
+   },
+   "location": "Astra Retail, Jayanagar",
+   "impact": {
+    "value": 1061.06,
+    "currency": "INR",
+    "description": "About 1 units of sales lost over 2.0 days without stock",
+    "formula": "lost_sales = units_per_day * days_without_stock * unit_price; lost_margin = lost_units * unit_margin",
+    "basis": "SYNTHETIC"
+   },
+   "evidence_count": 28,
+   "stage": "DETECTED",
+   "investigation": null,
+   "agent_run": null,
+   "decision": null,
+   "signal": null,
+   "supporting_metrics": {
+    "demand_basis": "last 14 days (in-stock days)",
+    "days_of_cover": 0.0,
+    "units_on_hand": 0,
+    "units_per_day": 0.54,
+    "units_on_order": 7,
+    "quoted_lead_days": 5,
+    "days_without_stock": 2.0,
+    "observed_lead_days": 5.0,
+    "open_purchase_orders": 1,
+    "days_until_next_stock": 2.0
+   }
+  }
+ ],
+ "addressed": [
+  {
+   "kind": "risk",
+   "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+   "type": "STOCKOUT_RISK",
+   "title": "Wireless Speaker X may run out within a day",
+   "description": "1 unit left and selling about 5.0 a day. The next stock from SoundWave Wholesale is about 3 days away (open purchase order PO-260925-SOUN-S1-0222, expected 2026-10-01 and now overdue), so the shelf could be empty for 3.1 days.",
+   "status": "MITIGATING",
+   "detected_at": "2026-10-02T07:00:00",
+   "severity": "CRITICAL",
+   "confidence": null,
+   "entity": {
+    "type": "product",
+    "id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+    "name": "Wireless Speaker X",
+    "code": "SPKX"
+   },
+   "location": "Astra Retail, Jayanagar",
+   "impact": {
+    "value": 38819.21,
+    "currency": "INR",
+    "description": "About 16 units of sales lost over 3.1 days without stock",
+    "formula": "lost_sales = units_per_day * days_without_stock * unit_price; lost_margin = lost_units * unit_margin",
+    "basis": "SYNTHETIC"
+   },
+   "evidence_count": 61,
+   "stage": "ACTION_COMPLETED",
+   "investigation": {
+    "id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+    "status": "COMPLETED",
+    "selected_hypothesis": "SUPPLIER_DELAY_SHORTAGE",
+    "selected_label": "Late deliveries left the shelf short",
+    "evidence_support_score": 1.0,
+    "result_status": null,
+    "action_type": null,
+    "decision_readiness": null,
+    "summary": null
+   },
+   "agent_run": {
+    "id": "902e03e3-4944-412c-91c6-c984a28c7d5b",
+    "status": "COMPLETED",
+    "selected_hypothesis": null,
+    "selected_label": null,
+    "evidence_support_score": null,
+    "result_status": "CONCLUDED",
+    "action_type": null,
+    "decision_readiness": null,
+    "summary": null
+   },
+   "decision": {
+    "id": "02515578-1f25-4fb8-9fb8-438c7ce281d9",
+    "status": "EXECUTED",
+    "selected_hypothesis": null,
+    "selected_label": null,
+    "evidence_support_score": null,
+    "result_status": null,
+    "action_type": "REORDER_PRODUCT",
+    "decision_readiness": "READY",
+    "summary": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00)."
+   },
+   "signal": null,
+   "supporting_metrics": {
+    "demand_basis": "last 14 days (in-stock days)",
+    "days_of_cover": 0.2,
+    "units_on_hand": 1,
+    "units_per_day": 5.0,
+    "units_on_order": 36,
+    "quoted_lead_days": 6,
+    "days_without_stock": 3.1,
+    "observed_lead_days": 9.2,
+    "open_purchase_orders": 1,
+    "days_until_next_stock": 3.3
+   }
+  }
+ ],
+ "opportunities": [],
+ "impact": {
+  "exposure_total": 39880.27,
+  "exposure_count": 2,
+  "opportunity_total": null,
+  "opportunity_count": 0,
+  "currency": "INR",
+  "note": "Sums of the deterministic impact estimates attached to each open finding. Estimates can overlap, so totals indicate scale rather than an exact figure."
+ },
+ "metrics": null,
+ "recent_activity": [
+  {
+   "at": "2026-10-03T06:27:32.393645",
+   "kind": "decision",
+   "title": "Simulated action completed",
+   "detail": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+   "status": "EXECUTED",
+   "link": {
+    "kind": "risk",
+    "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+   }
+  },
+  {
+   "at": "2026-10-03T06:27:32.369003",
+   "kind": "decision",
+   "title": "Approved by Store owner",
+   "detail": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+   "status": "APPROVED",
+   "link": {
+    "kind": "risk",
+    "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+   }
+  },
+  {
+   "at": "2026-10-03T06:27:32.197793",
+   "kind": "decision",
+   "title": "Waiting for approval",
+   "detail": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+   "status": "AWAITING_APPROVAL",
+   "link": {
+    "kind": "risk",
+    "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+   }
+  },
+  {
+   "at": "2026-10-03T06:27:32.196192",
+   "kind": "decision",
+   "title": "Recommendation prepared",
+   "detail": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+   "status": "EXECUTED",
+   "link": {
+    "kind": "risk",
+    "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+   }
+  },
+  {
+   "at": "2026-10-03T06:27:32.164357",
+   "kind": "investigation",
+   "title": "Investigation completed",
+   "detail": "The available evidence strongly supports late deliveries left the shelf short as the risk driver (Evidence Support Score 1.00), with demand jumped faster than stock was replenished as a contributing factor (0.98).",
+   "status": "CONCLUDED",
+   "link": {
+    "kind": "risk",
+    "id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc"
+   }
+  },
+  {
+   "at": "2026-10-03T06:27:31.438612",
+   "kind": "scan",
+   "title": "Business scan: opportunities",
+   "detail": "0 new opportunities",
+   "status": "COMPLETED",
+   "link": null
+  },
+  {
+   "at": "2026-10-03T06:27:31.221496",
+   "kind": "scan",
+   "title": "Business scan: risks",
+   "detail": "3 new risks found",
+   "status": "COMPLETED",
+   "link": null
+  },
+  {
+   "at": "2026-10-03T06:27:31.088423",
+   "kind": "simulation",
+   "title": "Scenario loaded: Stockout crisis",
+   "detail": "A best-seller is selling faster than usual while its supplier has slowed down. REACT spots the stock running out before the next delivery, prices the lost sales and recommends a reorder.",
+   "status": "COMPLETED",
+   "link": null
+  }
+ ],
+ "domain": "merchant",
+ "business_health": {
+  "period": {
+   "label": "Last 7 days",
+   "start": "2026-09-25",
+   "end": "2026-10-01"
+  },
+  "revenue": 640447.0,
+  "gross_margin": 139265.0,
+  "gross_margin_rate": 0.2174,
+  "orders": 270,
+  "units": 398,
+  "average_order_value": 2372.03,
+  "discount_rate": 0.0047,
+  "previous": {
+   "revenue": 590050.0,
+   "gross_margin": 125240.0,
+   "gross_margin_rate": 0.2123,
+   "orders": 279,
+   "units": 377,
+   "average_order_value": 2114.87,
+   "discount_rate": 0.0045
+  },
+  "revenue_change_pct": 8.5,
+  "gross_margin_change_pct": 11.2,
+  "orders_change_pct": -3.2,
+  "revenue_vs_normal_week_pct": -0.7,
+  "normal_weekly_revenue": 644913.62,
+  "inventory": {
+   "healthy_pct": 98.2,
+   "products_considered": 170,
+   "healthy": 167,
+   "short_of_stock": 2,
+   "overstocked": 1,
+   "rule": "healthy = stock lasts until the next delivery and is not more than 90 days of sales; sporadic sellers excluded"
+  },
+  "currency": "INR",
+  "basis": "SYNTHETIC"
+ },
+ "value": {
+  "potential_loss_identified": 78699.48,
+  "opportunity_identified": 0,
+  "inventory_capital_at_risk": 0,
+  "issues_detected": 3,
+  "issues_open": 3,
+  "issues_resolved": 0,
+  "stockout_risks_detected": 2,
+  "supplier_risks_detected": 1,
+  "opportunities_detected": 0,
+  "actions_recommended": 1,
+  "actions_approved": 1,
+  "actions_rejected": 0,
+  "simulated_actions_executed": 1,
+  "revenue_protected_estimate": 38819.21,
+  "margin_protected_estimate": 0,
+  "opportunity_pursued_estimate": 0,
+  "currency": "INR",
+  "labels": {
+   "potential_loss_identified": "Estimated, synthetic",
+   "opportunity_identified": "Potential, synthetic",
+   "revenue_protected_estimate": "Estimated impact of approved simulated actions; not real savings"
+  }
+ },
+ "merchant": {
+  "business_name": "Astra Retail",
+  "business_type": "Consumer electronics & mobile accessories",
+  "city": "Bengaluru",
+  "state": "Karnataka",
+  "stores": [
+   {
+    "id": "d304d608-50db-4710-92c6-e2f2ce624ad2",
+    "code": "S1",
+    "name": "Astra Retail, Jayanagar",
+    "locality": "Jayanagar",
+    "region": "South Bengaluru",
+    "type": "PHYSICAL"
+   }
+  ],
+  "scenario": "stockout_crisis",
+  "is_synthetic": true
+ }
+}

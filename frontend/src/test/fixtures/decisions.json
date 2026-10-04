@@ -1,0 +1,35 @@
+{
+ "items": [
+  {
+   "decision_id": "02515578-1f25-4fb8-9fb8-438c7ce281d9",
+   "agent_run_id": "902e03e3-4944-412c-91c6-c984a28c7d5b",
+   "investigation_id": "854c4c57-b0cc-4863-a8fe-abefb21908bf",
+   "subject_type": "RISK",
+   "incident_id": null,
+   "opportunity_id": null,
+   "risk_id": "390c6a8d-cdf7-403e-9a88-87b5e93e8bdc",
+   "status": "EXECUTED",
+   "decision_readiness": "READY",
+   "action_type": "REORDER_PRODUCT",
+   "target_type": "product",
+   "target_id": "ef0c34b1-2d36-4027-9c4e-6db12200253e",
+   "target_name": "Wireless Speaker X",
+   "priority": "P1",
+   "summary": "Reorder product for Wireless Speaker X: late deliveries left the shelf short (Evidence Support Score 1.00).",
+   "recommendation": "Reorder product: Create a purchase order to restock a product before it runs out. Target: Wireless Speaker X.",
+   "hypothesis_type": "SUPPLIER_DELAY_SHORTAGE",
+   "hypothesis_label": "Late deliveries left the shelf short",
+   "evidence_support_score": 1.0,
+   "requires_human_approval": true,
+   "provider": "deterministic",
+   "llm_used": false,
+   "fallback_used": false,
+   "error": null,
+   "created_at": "2026-10-03T06:27:32.193597",
+   "updated_at": "2026-10-03T06:27:32.397987"
+  }
+ ],
+ "total": 1,
+ "limit": 200,
+ "offset": 0
+}
